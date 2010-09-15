@@ -1,0 +1,31 @@
+echo "Custom aliases"
+
+alias ll="ls -lh"
+alias la="ls -lah"
+alias l="ls"
+
+#alias vi="/usr/bin/vim"
+alias vi='/Applications/MacVim.app/Contents/MacOS/Vim'
+alias vim='/Applications/MacVim.app/Contents/MacOS/Vim'
+
+#alias mysql=/usr/local/mysql/bin/mysql
+#alias mysqladmin=/usr/local/mysql/bin/mysqladmin
+#alias mysqldump=/usr/local/mysql/bin/mysqldump
+
+#alias jruby=~/Library/Java/jruby/current/bin/jruby
+alias jrs="jruby -S"
+alias jr=jruby
+alias jrake="jruby -S rake"
+
+alias tar=gnutar
+
+#alias scala="rlwrap scala -Xnojline"
+
+#
+#  GIT aliases
+#
+alias grao="git remote add origin "
+alias gfp="git push origin master:refs/heads/master"
+
+
+#vim: set filetype=sh
