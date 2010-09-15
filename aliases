@@ -26,6 +26,10 @@ alias tar=gnutar
 #
 alias grao="git remote add origin "
 alias gfp="git push origin master:refs/heads/master"
+alias gs="git status"
+alias gd="git diff"
+alias gca="git commit -a"
+alias gcl="git log --grap"
 
 
 #vim: set filetype=sh
