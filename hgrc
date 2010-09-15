@@ -1,0 +1,79 @@
+[ui]
+username = federico  silva <fedesilva@pragmagica.com>
+verbose = False
+editor = /Applications/MacVim.app/Contents/MacOS/Vim 
+askusername = True
+ssh = ssh -C
+ignore = ~/.hgignore
+
+[alias]
+latest = glog --limit 5
+
+[diff]
+git = True
+
+[extensions]
+mq = 
+bookmarks = 
+progress = 
+zeroconf = 
+color = 
+graphlog = 
+churn =
+rebase =
+#squash = /Users/f/Workshop/Library/tools/mercurial/squash/squash.py
+hgext.collapse = /Users/f/Workshop/Library/tools/mercurial/hgcollapse/hgext/collapse.py
+localbranch = /Users/f/Workshop/Library/tools/mercurial/localbranch/localbranch.py
+shelve  = /Users/f/Workshop/Library/tools/mercurial/hgshelve/hgshelve.py
+transplant = 
+pager = 
+record = 
+patchbomb = 
+purge = 
+gpg = 
+fetch = 
+extdiff = 
+convert = 
+
+[pager]
+pager = LESS='FSRX' less
+
+
+[bookmarks]
+track.current = True
+
+[color]
+status.modified = yellow bold 
+status.added = green bold 
+status.removed = red bold 
+status.deleted = red bold underline
+status.unknown = green bold underline
+status.ignored = green 
+
+diff.diffline = bold
+diff.extended = cyan bold
+diff.file_a = red bold
+diff.file_b = green bold
+diff.hunk = magenta
+diff.deleted = red
+diff.inserted = green
+diff.changed = white
+diff.trailingwhitespace = bold red_background
+
+[merge-patterns]
+** = filemerge
+
+[merge-tools]
+filemerge.executable = mvim
+filemerge.args = -d $local $other
+filemerge.checkchanged = true
+filemerge.gui = true
+
+[extdiff]
+cmd.vimdiff = /Applications/MacVim.app/Contents/MacOS/Vim
+opts.vimdiff = -f '+next' '+execute "DirDiff" argv(0) argv(1)'
+
+cmd.mvimdiff =  mvim
+opts.mvimdiff = -f '+next' '+execute "DirDiff" argv(0) argv(1)'
+
+cmd.smartdiff = /Applications/SmartSynchronize.app/smartsynchronize.sh
