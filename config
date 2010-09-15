@@ -1,4 +1,4 @@
-echo "Custom config"
+#echo "Custom config"
 
 export LC_CTYPE=en_US.UTF-8
 

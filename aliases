@@ -1,4 +1,5 @@
-echo "Custom aliases"
+#vim: set filetype=sh
+#echo "Custom aliases"
 
 alias ll="ls -lh"
 alias la="ls -lah"
@@ -32,4 +33,3 @@ alias gca="git commit -a"
 alias gcl="git log --grap"
 
 
-#vim: set filetype=sh

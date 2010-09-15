@@ -1,5 +1,5 @@
-
-echo "Custom init!"
+#vim: set filetype=sh
+#echo "Custom init!"
 
 if [ -f $HOME/.dotfiles/env  ]; then
     . $HOME/.dotfiles/env
@@ -16,4 +16,3 @@ fi
 
 
 
-#vim: set filetype=sh

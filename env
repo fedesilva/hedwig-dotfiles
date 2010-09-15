@@ -1,4 +1,4 @@
-echo "Custom ENV"
+#echo "Custom ENV"
 
 
 #
@@ -52,11 +52,12 @@ fi
 
 
 
+export PATH=$HOME/bin:$PATH
 #
 #  HomeBrew
 #
-export PATH=$HOME/bin:$PATH
-export PATH=$HOME/Library/homebrew/bin:$PATH
+export HOME_BREW_HOME=$HOME/Library/homebrew
+export PATH=$HOME_BREW_HOME/bin:$HOME_BREW_HOME/Cellar/python/2.7/bin:$PATH
 
 if [ -f `brew --prefix`/etc/bash_completion ]; then
   . `brew --prefix`/etc/bash_completion
