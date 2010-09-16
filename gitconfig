@@ -18,8 +18,8 @@
 
 [alias]
 	co = checkout
-	ci = commit
-	cia = commit -a
+	ci = commit -v
+	cia = commit -av
 	st = status
 	br = branch
 	bra = branch -a
