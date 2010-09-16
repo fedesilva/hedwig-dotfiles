@@ -1,10 +1,9 @@
-#echo "Custom ENV"
+#vim: set filetype=sh
 
 
 #
 #  Java
 #
-
 #export JAVA_HOME=/Users/f/bin/soylatte16-i386-1.0
 export JAVA_VERSION=1.6
 #export JAVA_VERSION=1.5
@@ -63,10 +62,16 @@ if [ -f `brew --prefix`/etc/bash_completion ]; then
   . `brew --prefix`/etc/bash_completion
 fi
 
+#
+# Google Go
+#
+export GOROOT=`brew --cellar`/go/HEAD
+export GOBIN=/Users/f/Library/homebrew/bin
+export GOARCH=amd64
+export GOOS=darwin
+
 
 
 # Remote X config
 export DISPLAY=:0.0
 
-
-#vim: set filetype=sh

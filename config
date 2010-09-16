@@ -2,8 +2,6 @@
 
 export LC_CTYPE=en_US.UTF-8
 
-# enable color support of ls and also add handy aliases
-alias ls='ls -G'
 
 # don't put duplicate lines in the history. See bash(1) for more options
 export HISTCONTROL=ignoredups
