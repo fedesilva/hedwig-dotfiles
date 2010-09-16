@@ -1,0 +1,15 @@
+#
+#  Notes on how I would like to make this dotfiles better
+#
+
++ Find out how to determine the platform
+  + set a variable before importing?
+
++ make subfolders 
+  + shell
+  + git
+  + hg
+  ...
+  # top level should have symlinkable files ( bashrc, bash_profile, etc.
+
++ prepare things to migrate to zsh
