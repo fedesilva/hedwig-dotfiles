@@ -25,6 +25,13 @@ alias vi='/Applications/MacVim.app/Contents/MacOS/Vim'
 alias vim='/Applications/MacVim.app/Contents/MacOS/Vim'
 
 #
+# Terminitor
+#
+alias ti=terminitor
+alias tio="terminitor open"
+alias tis="terminitor start"
+
+#
 #  JRuby aliases
 #
 alias jrs="jruby -S"
@@ -32,8 +39,6 @@ alias jr=jruby
 alias jk="jruby -S rake"
 
 alias tar=gnutar
-
-#alias scala="rlwrap scala -Xnojline"
 
 #
 #  GIT aliases
