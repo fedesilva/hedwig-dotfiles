@@ -1,0 +1,18 @@
+#vim: set filetype=sh
+#echo "Custom init!"
+
+if [ -f $HOME/.dotfiles/bash/env  ]; then
+    . $HOME/.dotfiles/bash/env
+fi
+
+if [ -f $HOME/.dotfiles/bash/config  ]; then
+    . $HOME/.dotfiles/bash/config
+fi
+
+if [ -f $HOME/.dotfiles/bash/aliases  ]; then
+    . $HOME/.dotfiles/bash/aliases
+fi
+
+
+
+
