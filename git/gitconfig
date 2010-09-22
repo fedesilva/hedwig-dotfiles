@@ -3,7 +3,6 @@
 	email = fede.silva@gmail.com
 [core]
 	excludesfile = /Users/f/.gitignore
-    #editor = vim
 	editor = /Applications/MacVim.app/Contents/MacOS/Vim
 [color]
 	ui = true
@@ -23,11 +22,10 @@
 	st = status
 	br = branch
 	bra = branch -a
-    glog = log --graph --pretty=oneline --abbrev-commit
-    lg = log -p
-    lol = log --graph --decorate --pretty=oneline --abbrev-commit
-    lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
-    ls = ls-files
+  lg = log -p
+  lol = log --graph --decorate --pretty=oneline --abbrev-commit
+  lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
+  ls = ls-files
 
 [difftool "Kaleidoscope"]
 	cmd = ksdiff-wrapper git \"$LOCAL\" \"$REMOTE\"
