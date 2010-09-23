@@ -1,9 +1,0 @@
-let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =7
-let g:netrw_dirhist_1='/Users/f'
-let g:netrw_dirhist_2='/Users/f/Workshop/mine/gardel/main'
-let g:netrw_dirhist_3='/Users/f/.vim'
-let g:netrw_dirhist_4='/Users/f/Workshop/clients/splendido/maqueta'
-let g:netrw_dirhist_5='/Users/f/Workshop/mine/gardel/main'
-let g:netrw_dirhist_6='/Users/f/Workshop/mine/gardel/mapper-incubator'
-let g:netrw_dirhist_7='/Users/f/.dotfiles/.git'
