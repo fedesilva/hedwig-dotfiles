@@ -6,10 +6,14 @@
   + set a variable before importing?
 
 + make subfolders 
-  + shell
-  + git
-  + hg
+  + OK shell
+  + OK git
+  + OK hg
   ...
-  # top level should have symlinkable files ( bashrc, bash_profile, etc.
+  + top level should have symlinkable files ( bashrc, bash_profile, etc.
+  
++ move vim to a git submodule
+
++ create a bin dir with a script to symlink stuff to $HOME
 
 + prepare things to migrate to zsh
