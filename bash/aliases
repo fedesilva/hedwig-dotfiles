@@ -49,6 +49,7 @@ alias gs="git status"
 alias gd="git diff"
 alias gca="git commit -av"
 alias gcl="git log --grap"
+alias gl="git lola"
 
 alias ta="tig --all"
 
