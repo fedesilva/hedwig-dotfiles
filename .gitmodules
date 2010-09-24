@@ -1,0 +1,9 @@
+[submodule "vim/bundle/tpope-vim-ragtag"]
+	path = vim/bundle/tpope-vim-ragtag
+	url = http://github.com/tpope/vim-ragtag.git
+[submodule "vim/bundle/tpope-vim-surround"]
+	path = vim/bundle/tpope-vim-surround
+	url = http://github.com/tpope/vim-surround.git
+[submodule "vim/bundle/msanders-snipmate-vim"]
+	path = vim/bundle/msanders-snipmate-vim
+	url = http://github.com/msanders/snipmate.vim.git
