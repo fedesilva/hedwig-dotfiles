@@ -43,10 +43,11 @@ alias tar=gnutar
 #
 #  GIT aliases
 #
-alias grao="git remote add origin "
-alias gfp="git push origin master:refs/heads/master"
+alias gpom="git push origin master:refs/heads/master"
 alias gs="git status"
+alias gadd="git add"
 alias gd="git diff"
+alias gci="git commit -v"
 alias gca="git commit -av"
 alias gcl="git log --grap"
 alias gl="git lola"

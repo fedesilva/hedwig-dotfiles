@@ -27,20 +27,23 @@ export PATH=$HOME/.cljr/bin:$PATH
 #
 #  Misc Development env vars
 #
-#export SBT_OPTS="-noverify -javaagent:$HOME/Applications/jrebel/jrebel.jar"
-#export JREBEL_JAR_PATH=$HOME/Applications/jrebel/jrebel.jar
-#export APPENGINE_SDK_HOME=$HOME/Workshop/Library/java/appengine-java-sdk-1.3.3.1
+export JREBEL_JAR_PATH=$HOME/Applications/jrebel/jrebel.jar
+export JREBEL_OPTS="-noverify -javaagent:$HOME/Applications/jrebel/jrebel.jar"
+export SBT_OPTS=$JREBEL_OPTS
+export APPENGINE_SDK_HOME=$HOME/Library/homebrew/Cellar/app-engine-java-sdk/1.3.8/libexec/
 
 export EDITOR=/Applications/MacVim.app/Contents/MacOS/Vim
 export SVN_EDITOR=$EDITOR
+
+
+#Home bin
+export PATH=$HOME/bin:$PATH
+
 
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
 # sources /etc/bash.bashrc).
 
-
-#Home bin
-export PATH=$HOME/bin:$PATH
 
 
 #system's bash completion
@@ -54,7 +57,7 @@ fi
 #  HomeBrew
 #
 export HOME_BREW_HOME=$HOME/Library/homebrew
-export PATH=$HOME_BREW_HOME/bin:$HOME_BREW_HOME/Cellar/python/2.7/bin:$PATH
+export PATH=$HOME_BREW_HOME/bin:$HOME_BREW_HOME/Cellar/python/2.7/bin:$HOME/Library/homebrew/sbin:$PATH
 
 if [ -f `brew --prefix`/etc/bash_completion ]; then
   . `brew --prefix`/etc/bash_completion

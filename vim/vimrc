@@ -17,9 +17,8 @@ runtime colors.vim                " Load custom colors settings
 
 runtime macros/matchit.vim        " Load the matchit plugin.
 
-
 set showcmd                       " Display incomplete commands.
-set showmode                      " Display the mode you're in.
+set showmode                     " Display the mode you're in.
 
 set backspace=indent,eol,start    " Intuitive backspacing.
 
@@ -32,10 +31,10 @@ set ignorecase                    " Case-insensitive searching.
 set smartcase                     " But case-sensitive if expression contains a capital letter.
 
 "set autoindent                   " always set autoindenting on
-set copyindent                    " copy the previous indentation on autoindenting
+"set copyindent                   " copy the previous indentation on autoindenting
 
-set number                       " Show line numbers.
-"set relativenumber                " Show relative line numbers.
+set number                        " Show line numbers.
+"set relativenumber               " Show relative line numbers.
 set ruler                         " Show cursor position.
 set cursorline
 
@@ -75,8 +74,9 @@ set nowrap "do not wrap lines
 
 
 " Automatic fold settings for specific files. Uncomment to use.
- autocmd FileType ruby setlocal foldmethod=syntax
- autocmd FileType css  setlocal foldmethod=indent shiftwidth=2 tabstop=2
+" autocmd FileType ruby setlocal foldmethod=syntax
+" autocmd FileType css  setlocal foldmethod=indent shiftwidth=2 tabstop=2
+
 
 " For the MakeGreen plugin and Ruby RSpec. Uncomment to use.
 autocmd BufNewFile,BufRead *_spec.rb compiler rspec
@@ -90,7 +90,11 @@ au FileType scala setlocal expandtab
 au FileType scala setlocal softtabstop=2
 au FileType scala setlocal tabstop=2
 au FileType scala setlocal shiftwidth=2
+" au FileType scala setlocal foldmethod=syntax
+au FileType scala setlocal foldmethod=indent shiftwidth=2 tabstop=2
 
+autocmd BufNewFile,BufRead *.ssp setf html
+autocmd BufNewFile,BufRead *.scaml setf haml
 
 au FileType php setlocal expandtab
 au FileType php setlocal softtabstop=4

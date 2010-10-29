@@ -8,9 +8,12 @@ nnoremap ; :
 nnoremap j gj
 nnoremap k gk
 
-nmap ,n :NERDTreeClose<CR>:NERDTreeToggle<CR>
-nmap ,f :NERDTreeClose<CR>:NERDTreeFind<CR>
-nmap ,m :NERDTreeClose<CR>
+nmap <leader>n :NERDTreeClose<CR>:NERDTreeToggle<CR>
+nmap <leader>f :NERDTreeClose<CR>:NERDTreeFind<CR>
+nmap <leader>m :NERDTreeClose<CR>
+
+nmap <leader>fx :CommandTFlush<cr>
+nmap <leader>t :CommandT<cr>
 
 
 map v. :vi .<cr>
@@ -80,6 +83,7 @@ map <D-e> :BufExplorer<cr>
 
 map <c-j> :bprev!<CR>
 map <c-k> :bnext!<CR>
+map <c-a> :b# <cr>
 map <leader>a :b# <cr>
 
 map <D-d> :delete<cr>
