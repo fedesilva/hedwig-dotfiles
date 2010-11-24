@@ -1,8 +1,6 @@
 #vim: set filetype=sh
 
 
-if [ $IS_LINUX = 
-
 #
 #  Java
 #

@@ -1,5 +1,6 @@
 #vim: set filetype=sh
 
+export PATH=$HOME/bin:$PATH
 
 #system's bash completion
 if [ -f /etc/bash_completion ]; then
