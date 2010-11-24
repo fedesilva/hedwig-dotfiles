@@ -3,3 +3,6 @@
 vim/backups/*
 vim/.netrwhist
 vim/.netrwhist
+*.so
+*.o
+*.log
