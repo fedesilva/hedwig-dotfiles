@@ -13,6 +13,8 @@ export HISTSIZE=1500
 # update the values of LINES and COLUMNS.
 shopt -s checkwinsize
 
+export CLICOLOR=1
+export LSCOLORS=DxGxcxdxCxegedabagacad
 
 
 
@@ -28,4 +30,4 @@ PS1='\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;33m\]\[\033[01;34m\]\w\[\033[01;
 #PS1='\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;33m\]\[\033[01;34m\]\w\[\033[01;33m\] `vcprompt-c` \[\033[00m\]\$ '
 
 
-#vim: set filetype=sh
+#vim: filetype=sh
