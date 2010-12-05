@@ -2,18 +2,12 @@
 #  Notes on how I would like to make this dotfiles better
 #
 
-+ Find out how to determine the platform
-  + set a variable before importing?
-
-+ make subfolders 
-  + OK shell
-  + OK git
-  + OK hg
-  ...
-  + top level should have symlinkable files ( bashrc, bash_profile, etc.
-  
-+ move vim to a git submodule
-
 + create a bin dir with a script to symlink stuff to $HOME
+  + assimilate.sh
 
++ move vim to a git submodule
 + prepare things to migrate to zsh
+
++ look around what other people is doing. (links?)
+
+
