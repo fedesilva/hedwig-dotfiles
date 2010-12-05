@@ -3,7 +3,7 @@
 	email = fede.silva@gmail.com
 [core]
 	excludesfile = /Users/f/.gitignore
-	editor = /Applications/MacVim.app/Contents/MacOS/Vim
+	editor = vim
 [color]
 	ui = true
 

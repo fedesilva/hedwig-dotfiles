@@ -1,16 +1,25 @@
 #vim: set filetype=sh
 #echo "Custom init!"
 
-if [ -f $HOME/.dotfiles/bash/env  ]; then
-    . $HOME/.dotfiles/bash/env
+if [ `uname` = "Linux" ]; then
+ export IS_LINUX=1
+ export OS='linux'
+fi
+if [ `uname` = "Darwin" ]; then
+ export IS_MAC=1
+ export OS='mac'
 fi
 
-if [ -f $HOME/.dotfiles/bash/config  ]; then
-    . $HOME/.dotfiles/bash/config
+if [ -f $HOME/.dotfiles/bash/os/$OS/env  ]; then
+    . $HOME/.dotfiles/bash/os/$OS/env
 fi
 
-if [ -f $HOME/.dotfiles/bash/aliases  ]; then
-    . $HOME/.dotfiles/bash/aliases
+if [ -f $HOME/.dotfiles/bash/os/$OS/config  ]; then
+    . $HOME/.dotfiles/bash/os/$OS/config
+fi
+
+if [ -f $HOME/.dotfiles/bash/os/$OS/aliases  ]; then
+    . $HOME/.dotfiles/bash/os/$OS/aliases
 fi
 
 

@@ -1,0 +1,12 @@
+#vim: set filetype=sh
+
+export PATH=$HOME/bin:$PATH
+
+#system's bash completion
+if [ -f /etc/bash_completion ]; then
+    . /etc/bash_completion
+fi
+
+# Remote X config
+export DISPLAY=:0.0
+
