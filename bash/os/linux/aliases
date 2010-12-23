@@ -4,7 +4,7 @@
 #
 # ls aliases enable color support of ls and also add handy aliases
 #
-alias ls='ls -G'
+alias ls='ls -G --color=auto'
 alias ll="ls -lh"
 alias la="ls -lah"
 alias l="ls"
