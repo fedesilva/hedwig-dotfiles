@@ -8,5 +8,5 @@ if [ -f /etc/bash_completion ]; then
 fi
 
 # Remote X config
-export DISPLAY=:0.0
+#export DISPLAY=:0.0
 
