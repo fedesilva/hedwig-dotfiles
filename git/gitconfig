@@ -2,7 +2,7 @@
 	name = Federico Silva
 	email = fsilva@inconcertcc.com
 [core]
-	excludesfile = /Users/f/.gitignore
+	excludesfile = /home/federico/.gitignore
 	editor = vim
 [color]
 	ui = true
