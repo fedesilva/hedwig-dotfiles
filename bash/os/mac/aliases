@@ -33,7 +33,6 @@ alias ti=terminitor
 alias tio="terminitor open"
 alias tis="terminitor start"
 
-fi
 
 #
 #  JRuby aliases
