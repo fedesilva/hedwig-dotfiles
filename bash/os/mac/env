@@ -1,5 +1,6 @@
 #vim: set filetype=sh
 
+#echo "Setting ENV"
 
 #
 #  Java
