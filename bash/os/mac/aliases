@@ -9,9 +9,7 @@ alias ll="ls -lh"
 alias la="ls -lah"
 alias l="ls"
 
-if $IS_MAS = 1
-then
-#
+
 #  Homebrew
 #
 
@@ -56,5 +54,4 @@ alias gcl="git log --grap"
 alias gl="git lola"
 
 alias ta="tig --all"
-
 
