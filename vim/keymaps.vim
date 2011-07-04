@@ -121,3 +121,7 @@ map <leader>vn :set lines=30 columns=115 <cr>
 map <leader>vv :set lines=43 <cr>         
 map <leader>vV :set lines=30 <cr>         
 
+
+inoremap <F1> <ESC>
+nnoremap <F1> <ESC>
+vnoremap <F1> <ESC>
