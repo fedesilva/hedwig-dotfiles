@@ -56,6 +56,10 @@ alias gca="git commit -av"
 alias gcl="git log --grap"
 alias gl="git lola"
 
+alias gw="git whatchanged"
+alias gwp="git whatchanged -p"
+
+
 alias ta="tig --all"
 
 
