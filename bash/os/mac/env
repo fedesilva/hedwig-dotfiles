@@ -63,16 +63,8 @@ if [ -f `brew --prefix`/etc/bash_completion ]; then
   . `brew --prefix`/etc/bash_completion
 fi
 
-#
-# Google Go
-#
-export GOROOT=`brew --cellar`/go/HEAD
-export GOBIN=$HOME/Library/homebrew/bin
-export GOARCH=amd64
-export GOOS=darwin
+
+eval "$(rbenv init -)"
 
 
-
-# Remote X config
-export DISPLAY=:0.0
 

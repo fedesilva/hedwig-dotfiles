@@ -2,4 +2,4 @@ if [ -f $HOME/.bashrc ]; then
       . $HOME/.bashrc
 fi
 
-
+[[ -s "/Users/fede/.rvm/scripts/rvm" ]] && source "/Users/fede/.rvm/scripts/rvm"  # This loads RVM into a shell session.
