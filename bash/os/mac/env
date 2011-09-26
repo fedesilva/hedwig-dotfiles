@@ -57,7 +57,7 @@ fi
 #
 #  HomeBrew
 #
-export PATH=`brew --prefix`/bin:$HOME_BREW_HOME/Cellar/python/2.7/bin:$HOME/Library/homebrew/sbin:$PATH
+export PATH=`brew --prefix`/bin:`brew --prefix`/Cellar/python/2.7/bin:`brew --prefix`/sbin:$PATH
 
 if [ -f `brew --prefix`/etc/bash_completion ]; then
   . `brew --prefix`/etc/bash_completion
