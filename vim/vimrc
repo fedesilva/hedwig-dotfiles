@@ -41,7 +41,7 @@ set cursorline
 set incsearch                     " Highlight matches as you type.
 set hlsearch                      " Highlight matches.
 
-set scrolloff=6                   " Show 3 lines of context around the cursor.
+set scrolloff=2                   " Show X lines of context around the cursor.
 
 set title                         " Set the terminal's title
 
