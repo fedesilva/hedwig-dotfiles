@@ -26,6 +26,7 @@ map vh :vi %:h <cr>
 "map <C-k> <C-w>k
 "map <C-l> <C-w>l
 
+map ,lt :TagbarToggle<cr>
 
 map <Leader>/ :nohlsearch<cr>
 map <Leader>w :set wrap! wrap?<cr>
