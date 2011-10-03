@@ -116,6 +116,7 @@ map ,uk :source ~/.vim/keymaps.vim <cr>
 "map <leader>1 :set number! number?<cr>
 map <leader>l0 :set relativenumber<cr>
 map <leader>l1 :set number<cr>
+map <leader>l- :set nonumber<cr>
 
 "View  sizes
 map <leader>vn :set lines=30 columns=115 <cr>         
