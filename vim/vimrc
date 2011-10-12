@@ -33,8 +33,8 @@ set smartcase                     " But case-sensitive if expression contains a 
 "set autoindent                   " always set autoindenting on
 "set copyindent                   " copy the previous indentation on autoindenting
 
-"set number                        " Show line numbers.
-set relativenumber               " Show relative line numbers.
+set number                        " Show line numbers.
+"set relativenumber               " Show relative line numbers.
 set ruler                         " Show cursor position.
 set cursorline
 
