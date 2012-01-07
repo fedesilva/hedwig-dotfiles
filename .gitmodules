@@ -10,3 +10,6 @@
 [submodule "vim/bundle/chef-vim"]
 	path = vim/bundle/chef-vim
 	url = https://github.com/vim-scripts/chef.vim.git
+[submodule "vim/bundle/nerdtree"]
+	path = vim/bundle/nerdtree
+	Url = https://github.com/scrooloose/nerdtree.git
