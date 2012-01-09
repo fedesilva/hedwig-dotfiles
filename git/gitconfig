@@ -2,7 +2,7 @@
 	name = fedesilva
 	email = fede.silva@gmail.com
 [core]
-	excludesfile = /Users/f/.gitignore
+	excludesfile = /root/.gitignore
 	editor = vim
 [color]
 	ui = true
