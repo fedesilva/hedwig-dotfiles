@@ -52,6 +52,7 @@ alias gci="git commit -v"
 alias gca="git commit -av"
 alias gcl="git log --grap"
 alias gl="git lola"
+alias grs="git remote show"
 
 alias gw="git whatchanged"
 alias gwp="git whatchanged -p"
