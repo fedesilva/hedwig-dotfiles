@@ -58,6 +58,11 @@ set undolevels=1000                 " use many muchos levels of undo
 set wildignore=*.swp,*.bak,*.pyc,*.class
 
 
+let g:SuperTabDefaultCompletionType = "context"
+
+:highlight Pmenu ctermbg=238 gui=bold
+
+
 " 
 set tabstop=2                    " Global tab width.
 set shiftwidth=2                 " And again, related.
@@ -90,8 +95,8 @@ au FileType scala setlocal expandtab
 au FileType scala setlocal softtabstop=2
 au FileType scala setlocal tabstop=2
 au FileType scala setlocal shiftwidth=2
-" au FileType scala setlocal foldmethod=syntax
-au FileType scala setlocal foldmethod=indent shiftwidth=2 tabstop=2
+au FileType scala setlocal foldmethod=syntax
+" au FileType scala setlocal foldmethod=indent shiftwidth=2 tabstop=2
 
 autocmd BufNewFile,BufRead *.ssp setf html
 autocmd BufNewFile,BufRead *.scaml setf haml

@@ -4,6 +4,7 @@ let g:fuf_modesDisable = []
 
 let g:SuperTabMappingForward = '<c-space>'
 let g:SuperTabMappingBackward = '<s-c-space>'
+let g:SuperTabDefaultCompletionType = "context"
 
 let clj_highlight_builtins = 1
 

@@ -8,3 +8,5 @@ set guioptions-=T                 " Hide toolbar.
 set lines=30 columns=115          " Window dimensions.
 
 "set guioptions-=r                 " Don't show right scrollbar
+
+:highlight Pmenu guibg=brown gui=bold
