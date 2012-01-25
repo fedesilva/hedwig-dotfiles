@@ -10,3 +10,9 @@
 [submodule "vim/bundle/chef-vim"]
 	path = vim/bundle/chef-vim
 	url = https://github.com/vim-scripts/chef.vim.git
+[submodule "vim/bundle/nerdtree"]
+	path = vim/bundle/nerdtree
+	url = https://github.com/scrooloose/nerdtree.git
+[submodule "vim/bundle/supertab"]
+	path = vim/bundle/supertab
+	url = https://github.com/vim-scripts/SuperTab-continued..git
