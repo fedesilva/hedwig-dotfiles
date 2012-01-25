@@ -30,7 +30,8 @@ export PATH=$HOME/.cljr/bin:$PATH
 #
 export JREBEL_JAR_PATH=$HOME/Applications/jrebel/jrebel.jar
 export JREBEL_OPTS="-noverify -javaagent:$HOME/Applications/jrebel/jrebel.jar"
-export SBT_OPTS=$JREBEL_OPTS
+export SBT_OPTS="$JREBEL_OPTS -XX:+CMSClassUnloadingEnabled -XX:MaxPermSize=256m -Dfile.encoding=UTF8"
+
 export APPENGINE_SDK_HOME=$HOME/Library/homebrew/Cellar/app-engine-java-sdk/1.3.8/libexec/
 
 export EDITOR=/Applications/MacVim.app/Contents/MacOS/Vim
