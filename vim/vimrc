@@ -126,3 +126,7 @@ function! EnsureDirExists ()
     endif
 endfunction
 
+
+"Copy first non-blank to last non-blank character on a line
+noremap YY ^yg_
+
