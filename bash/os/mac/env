@@ -7,6 +7,7 @@
 #
 #export JAVA_HOME=$HOME/bin/soylatte16-i386-1.0
 export JAVA_VERSION=1.6
+#export JAVA_VERSION=1.7
 #export JAVA_VERSION=1.5
 
 export JAVA_HOME=/System/Library/Frameworks/JavaVM.framework/Versions/$JAVA_VERSION/Home
@@ -31,7 +32,8 @@ export PATH=$HOME/.cljr/bin:$PATH
 export JREBEL_JAR_PATH=$HOME/Applications/jrebel/jrebel.jar
 export JREBEL_OPTS="-noverify -javaagent:$HOME/Applications/jrebel/jrebel.jar"
 export SBT_OPTS=$JREBEL_OPTS
-export APPENGINE_SDK_HOME=$HOME/Library/homebrew/Cellar/app-engine-java-sdk/1.3.8/libexec/
+
+export APPENGINE_SDK_HOME=/Applications/appengine/1.7.0/
 
 export EDITOR=/Applications/MacVim.app/Contents/MacOS/Vim
 export SVN_EDITOR=$EDITOR
@@ -39,6 +41,9 @@ export SVN_EDITOR=$EDITOR
 
 #Home bin
 export PATH=$HOME/bin:$PATH
+
+#Python crap
+export PATH=/usr/local/share/python:$PATH
 
 
 # enable programmable completion features (you don't need to enable
@@ -53,7 +58,6 @@ if [ -f /etc/bash_completion ]; then
 fi
 
 
-
 #
 #  HomeBrew
 #
@@ -63,17 +67,4 @@ export PATH=$HOME_BREW_HOME/bin:$HOME_BREW_HOME/Cellar/python/2.7/bin:$HOME/Libr
 if [ -f `brew --prefix`/etc/bash_completion ]; then
   . `brew --prefix`/etc/bash_completion
 fi
-
-#
-# Google Go
-#
-export GOROOT=`brew --cellar`/go/HEAD
-export GOBIN=$HOME/Library/homebrew/bin
-export GOARCH=amd64
-export GOOS=darwin
-
-
-
-# Remote X config
-export DISPLAY=:0.0
 

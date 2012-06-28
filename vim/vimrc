@@ -18,7 +18,7 @@ runtime colors.vim                " Load custom colors settings
 runtime macros/matchit.vim        " Load the matchit plugin.
 
 set showcmd                       " Display incomplete commands.
-set showmode                     " Display the mode you're in.
+set showmode                      " Display the mode you're in.
 
 set backspace=indent,eol,start    " Intuitive backspacing.
 
@@ -33,28 +33,30 @@ set smartcase                     " But case-sensitive if expression contains a 
 "set autoindent                   " always set autoindenting on
 "set copyindent                   " copy the previous indentation on autoindenting
 
-"set number                        " Show line numbers.
-set relativenumber               " Show relative line numbers.
-set ruler                         " Show cursor position.
-set cursorline
+=======
+set number                        " Show line numbers.
+"set relativenumber               " Show relative line numbers.
+"
+set ruler                         
+set cursorline                    " Show cursor position.
 
 set incsearch                     " Highlight matches as you type.
 set hlsearch                      " Highlight matches.
 
-set scrolloff=2                   " Show X lines of context around the cursor.
+set scrolloff=0                   " Show 3 lines of context around the cursor.
 
 set title                         " Set the terminal's title
 
-set visualbell                      " No beeping.
+set visualbell                    " No beeping.
 
 
-"set nobackup                       " Don't make a backup before overwriting a file.
-"set nowritebackup                  " And again.
+"set nobackup                          " Don't make a backup before overwriting a file.
+"set nowritebackup                     " And again.
 set directory=$HOME/.vim/backups//,.  " Keep swap files in one location
 set backupdir=$HOME/.vim/backups//,. 
 
-set history=1000                    " remember more commands and search history
-set undolevels=1000                 " use many muchos levels of undo
+set history=1000                            " remember more commands and search history
+set undolevels=1000                         " use many muchos levels of undo
 set wildignore=*.swp,*.bak,*.pyc,*.class
 
 
@@ -70,12 +72,19 @@ set statusline=[%n]\ %<%.99f\ %h%w%m%r%y\ %{fugitive#statusline()}%{exists('*Cap
 
 set nowrap "do not wrap lines
 
+" augroup CommandTExtension
+"  autocmd!
+"  autocmd FocusGained * CommandTFlush
+"  autocmd BufWritePost * CommandTFlush
+"augroup END
+
+
 "set undofile
 
 
 " Automatic fold settings for specific files. Uncomment to use.
-" autocmd FileType ruby setlocal foldmethod=syntax
-" autocmd FileType css  setlocal foldmethod=indent shiftwidth=2 tabstop=2
+ autocmd FileType ruby setlocal foldmethod=syntax
+ autocmd FileType css  setlocal foldmethod=indent shiftwidth=2 tabstop=2
 
 
 " For the MakeGreen plugin and Ruby RSpec. Uncomment to use.
@@ -92,6 +101,8 @@ au FileType scala setlocal tabstop=2
 au FileType scala setlocal shiftwidth=2
 " au FileType scala setlocal foldmethod=syntax
 au FileType scala setlocal foldmethod=indent shiftwidth=2 tabstop=2
+
+autocmd BufNewFile,BufRead *.sbt setf scala
 
 autocmd BufNewFile,BufRead *.ssp setf html
 autocmd BufNewFile,BufRead *.scaml setf haml
