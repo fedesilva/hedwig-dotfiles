@@ -127,3 +127,7 @@ map <leader>vV :set lines=30 <cr>
 inoremap <F1> <ESC>
 nnoremap <F1> <ESC>
 vnoremap <F1> <ESC>
+
+noremap <leader>lb :CtrlPBuffer<cr>
+noremap <leader>lm :CtrlPMixed<cr>
+noremap <leader>lr :CtrlPMRU<cr>
