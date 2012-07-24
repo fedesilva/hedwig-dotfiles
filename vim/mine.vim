@@ -3,10 +3,14 @@ let g:ctrlp_map = ''
 let g:ctrlp_cmd = 'CtrlPMixed'
 let g:ctrlp_working_path_mode = 2
 
+let g:ctrlp_open_new_file = 'r'
+let g:ctrlp_open_multiple_files = '1r'
+let g:ctrlp_arg_map = 1
+
+
 let g:ctrlp_custom_ignore = {
   \ 'dir':  '\.git$\|\.hg$\|\.svn$|^target$',
   \ 'file': '\.exe$\|\.so$\|\.dll$',
-  \ 'link': 'some_bad_symbolic_links',
   \ }
 
 
