@@ -7,3 +7,4 @@ vim/.netrwhist
 *.o
 *.log
 vim/ruby/command-t/Makefile$
+doc/tags

@@ -129,6 +129,8 @@ nnoremap <F1> <ESC>
 vnoremap <F1> <ESC>
 
 noremap <leader>lb :CtrlPBuffer<cr>
+noremap <leader>lf :CtrlPCurWD<cr>
 noremap <leader>lm :CtrlPMixed<cr>
 noremap <leader>lr :CtrlPMRU<cr>
 noremap <leader>lp :CtrlP
+
