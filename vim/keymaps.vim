@@ -88,6 +88,8 @@ map <leader>a :b# <cr>
 
 map <D-d> :delete<cr>
 
+map <c-K> :make<cr>
+
 
 "edit my .dotfiles 
 nmap <silent> <leader>dd  :call Goto_dotfiles_and_edit() <cr>
