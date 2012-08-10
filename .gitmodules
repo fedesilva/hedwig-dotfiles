@@ -13,15 +13,15 @@
 [submodule "vim/bundle/supertab"]
 	path = vim/bundle/supertab
 	url = https://github.com/ervandew/supertab.git
-[submodule "/Users/fede/.dotfiles/vim/bundle/vim-fugitive"]
-	path = /Users/fede/.dotfiles/vim/bundle/vim-fugitive
+[submodule "vim/bundle/vim-fugitive"]
+	path = vim/bundle/vim-fugitive
 	url = https://github.com/tpope/vim-fugitive.git
-[submodule "/Users/fede/.dotfiles/vim/bundle/ctrlp"]
-	path = /Users/fede/.dotfiles/vim/bundle/ctrlp
+[submodule "vim/bundle/ctrlp"]
+	path = vim/bundle/ctrlp
 	url = https://github.com/kien/ctrlp.vim.git
-[submodule "/Users/fede/.dotfiles/vim/bundle/vim-easymotion"]
-	path = /Users/fede/.dotfiles/vim/bundle/vim-easymotion
+[submodule "vim/bundle/vim-easymotion"]
+	path = vim/bundle/vim-easymotion
 	url = git://github.com/Lokaltog/vim-easymotion.git
-[submodule "/Users/fede/.dotfiles/vim/bundle/gitv"]
-	path = /Users/fede/.dotfiles/vim/bundle/gitv
+[submodule "vim/bundle/gitv"]
+	path = vim/bundle/gitv
 	url = https://github.com/gregsexton/gitv.git
