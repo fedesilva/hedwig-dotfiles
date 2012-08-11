@@ -48,7 +48,6 @@ set title                         " Set the terminal's title
 
 set visualbell                    " No beeping.
 
-
 "set nobackup                          " Don't make a backup before overwriting a file.
 "set nowritebackup                     " And again.
 set directory=$HOME/.vim/backups//,.  " Keep swap files in one location
@@ -56,7 +55,7 @@ set backupdir=$HOME/.vim/backups//,.
 
 set history=1000                            " remember more commands and search history
 set undolevels=1000                         " use many muchos levels of undo
-set wildignore=*.swp,*.bak,*.pyc,*.class
+set wildignore=*.swp,*.bak,*.pyc,*.class,target
 
 
 " 
@@ -71,11 +70,7 @@ set statusline=[%n]\ %<%.99f\ %h%w%m%r%y\ %{fugitive#statusline()}%{exists('*Cap
 
 set nowrap "do not wrap lines
 
-" augroup CommandTExtension
-"  autocmd!
-"  autocmd FocusGained * CommandTFlush
-"  autocmd BufWritePost * CommandTFlush
-"augroup END
+set linebreak
 
 
 "set undofile
