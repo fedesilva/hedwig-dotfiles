@@ -29,8 +29,8 @@ export PATH=$HOME/.cljr/bin:$PATH
 #
 #  Misc Development env vars
 #
-export JREBEL_JAR_PATH=$HOME/Applications/jrebel/jrebel.jar
-export JREBEL_OPTS="-noverify -javaagent:$HOME/Applications/jrebel/jrebel.jar"
+export JREBEL_JAR_PATH=$HOME/Applications/ZeroTurnaround/JRebel/jrebel.jar
+export JREBEL_OPTS="-noverify -javaagent:${JREBEL_JAR_PATH}"
 export SBT_OPTS=$JREBEL_OPTS
 
 export APPENGINE_SDK_HOME=/Applications/appengine/1.7.0/
