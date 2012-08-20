@@ -13,16 +13,10 @@ let g:ctrlp_custom_ignore = {
   \ 'file': '\.exe$\|\.so$\|\.dll$',
   \ }
 
-
-let g:fuf_modesDisable = []
-
 let g:SuperTabMappingForward = '<c-space>'
 let g:SuperTabMappingBackward = '<s-c-space>'
 
 let clj_highlight_builtins = 1
-
-map <Leader>] <Plug>MakeGreen " change from <Leader>t to <Leader>]
-
 
 " Store the bookmarks file
 let NERDTreeBookmarksFile=expand("$HOME/.vim/NERDTreeBookmarks")
