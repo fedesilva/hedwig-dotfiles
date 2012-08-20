@@ -9,19 +9,23 @@ snippet main
 snippet app_
 	object ${1:AppName}	extends ${2:Parent} {
 		def main(args:Array[String]) {
-			${2:/* code */}
+			${3:/* code */}
 		}
 	}
 snippet appex_
 	object ${1:AppName}	extends ${2:Parent} {
 		def main(args:Array[String]) {
-			${2:/* code */}
+			${3:/* code */}
 		}
 	}
 snippet cls
 	class ${1:ClassName}
 snippet clx
 	class ${1:ClassName} extends ${2:ParentName}
+snippet ob
+	object ${1:ObjectName}
+snippet obex
+	object ${1:ObjectName} extends ${1:ParentName}
 snippet ccls
 	case class ${1:ClassName}
 snippet cclx
