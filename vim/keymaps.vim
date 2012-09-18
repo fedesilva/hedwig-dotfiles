@@ -79,16 +79,12 @@ map <leader>b :b
 map <leader><space> :b 
 map <leader>q :qall
 map <leader>Q :qall<cr> 
-map <leader>e :BufExplorer<cr>
-map <D-e> :BufExplorer<cr>
+map <leader>be :BufExplorer<cr>
 
 map <c-j> :bprev!<CR>
 map <c-k> :bnext!<CR>
 map <c-a> :b# <cr>
 map <leader>a :b# <cr>
-
-map <D-d> :delete<cr>
-
 
 "edit my .dotfiles 
 nmap <silent> <leader>dd  :call Goto_dotfiles_and_edit() <cr>
@@ -114,8 +110,8 @@ map ,uk :source ~/.vim/keymaps.vim <cr>
 
 "map <leader>0 :set relativenumber! relativenumber?<cr>
 "map <leader>1 :set number! number?<cr>
-map <leader>l0 :set relativenumber<cr>
-map <leader>l1 :set number<cr>
+map <leader>l0 :set relativenumber!<cr>
+map <leader>l1 :set number!<cr>
 map <leader>l- :set nonumber<cr>
 
 "View  sizes
