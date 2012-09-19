@@ -6,7 +6,7 @@ set background=dark
 if version > 580
     hi clear
     if exists("syntax_on")
-	syntax reset
+      syntax reset
     endif
 endif
 let g:colors_name="darkerdesert"
