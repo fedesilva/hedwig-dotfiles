@@ -26,20 +26,9 @@ map vh :vi %:h <cr>
 "map <C-k> <C-w>k
 "map <C-l> <C-w>l
 
-map ,lt :TagbarToggle<cr>
-
 map <Leader>/ :nohlsearch<cr>
 map <Leader>w :set wrap! wrap?<cr>
 
-map <leader>'f :FufFile<cr>
-map <leader>'t :FufTag<cr>
-map <leader>'j :FufJumpList<cr>
-map <leader>'q :FufQuickfix<cr>
-map <leader>'r :FufMruFile<cr>
-map <D-r> :FufMruFile<cr>
-map <leader>'d :FufDir<cr>
-map <leader>'b :FufBuffer<cr>
-map <leader>'x :FufRenewCache<cr>
 
 "
 " TODO Activate/deactivate this in a filetype plugin

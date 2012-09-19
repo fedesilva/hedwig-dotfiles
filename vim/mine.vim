@@ -33,3 +33,5 @@ let NERDTreeHighlightCursorline=1 " Highlight the selected entry in the tree
 let NERDTreeMouseMode=2           " Use a single click to fold/unfold directories
                                   " and a double click to open files
 
+                                
+let g:Powerline_theme = 'skwp'
