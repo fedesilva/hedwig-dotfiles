@@ -4,12 +4,10 @@
 "\e[6~": end-of-history
 "\e[3~": delete-char
 "\e[2~": quoted-insert
-"\e[5C": forward-word
-"\e[5D": backward-word
-"\e\e[C": forward-word
-"\e\e[D": backward-word
 "\ep": history-search-backward
 "\es": history-search-forward
+"\e[1;9D": backward-word
+"\e[1;9C": forward-word
 
 set completion-ignore-case On
 set meta-flag on
