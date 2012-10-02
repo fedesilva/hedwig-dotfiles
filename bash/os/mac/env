@@ -31,7 +31,7 @@ export PATH=$HOME/.cljr/bin:$PATH
 #
 export JREBEL_JAR_PATH=$HOME/Applications/ZeroTurnaround/JRebel/jrebel.jar
 export JREBEL_OPTS="-noverify -javaagent:${JREBEL_JAR_PATH}"
-export SBT_OPTS=$JREBEL_OPTS
+export SBT_OPTS="$JREBEL_OPTS  -Xmx1536m -XX:+CMSClassUnloadingEnabled -XX:MaxPermSize=384m -Dfile.encoding=UTF8 "
 
 export APPENGINE_SDK_HOME=/Applications/appengine/1.7.0/
 
