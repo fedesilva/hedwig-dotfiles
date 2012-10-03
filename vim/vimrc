@@ -48,10 +48,10 @@ set title                         " Set the terminal's title
 
 set visualbell                    " No beeping.
 
-"set nobackup                          " Don't make a backup before overwriting a file.
-"set nowritebackup                     " And again.
-set directory=$HOME/.vim/backups//,.  " Keep swap files in one location
-set backupdir=$HOME/.vim/backups//,. 
+set nobackup                          " Don't make a backup before overwriting a file.
+set nowritebackup                     " And again.
+"set directory=$HOME/.vim/backups//,.  " Keep swap files in one location
+"set backupdir=$HOME/.vim/backups//,. 
 
 set history=1000                            " remember more commands and search history
 set undolevels=1000                         " use many muchos levels of undo
@@ -72,18 +72,16 @@ set nowrap "do not wrap lines
 
 set linebreak
 
-
 "set undofile
 
-
 " Automatic fold settings for specific files. Uncomment to use.
- autocmd FileType ruby setlocal foldmethod=syntax
- autocmd FileType css  setlocal foldmethod=indent shiftwidth=2 tabstop=2
+au FileType css  setlocal foldmethod=indent shiftwidth=2 tabstop=2
 
 
 " For the MakeGreen plugin and Ruby RSpec. Uncomment to use.
-autocmd BufNewFile,BufRead *_spec.rb compiler rspec
+"autocmd BufNewFile,BufRead *_spec.rb compiler rspec
 
+au FileType ruby setlocal foldmethod=syntax
 au FileType ruby setlocal expandtab
 au FileType ruby setlocal softtabstop=2
 au FileType ruby setlocal tabstop=2
@@ -94,31 +92,31 @@ au FileType scala setlocal softtabstop=2
 au FileType scala setlocal tabstop=2
 au FileType scala setlocal shiftwidth=2
 " au FileType scala setlocal foldmethod=syntax
-au FileType scala setlocal foldmethod=indent shiftwidth=2 tabstop=2
+"au FileType scala setlocal foldmethod=indent shiftwidth=2 tabstop=2
 
-autocmd BufNewFile,BufRead *.sbt setf scala
+au BufNewFile,BufRead *.sbt setf scala
 
-autocmd BufNewFile,BufRead *.ssp setf html
-autocmd BufNewFile,BufRead *.scaml setf haml
+au BufNewFile,BufRead *.ssp setf html
+au BufNewFile,BufRead *.scaml setf haml
 
 au FileType php setlocal expandtab
 au FileType php setlocal softtabstop=4
 au FileType php setlocal tabstop=4
 au FileType php setlocal shiftwidth=4
 
-autocmd BufNewFile * silent! 0r $HOME/.vim/templates/%:e.tpl
+au BufNewFile * silent! 0r $HOME/.vim/templates/%:e.tpl
 
-autocmd FileType python set omnifunc=pythoncomplete#Complete
-autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
-autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
-autocmd FileType css set omnifunc=csscomplete#CompleteCSS
-autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
-autocmd FileType php set omnifunc=phpcomplete#CompletePHP
-autocmd FileType c set omnifunc=ccomplete#Complete
+au FileType python set omnifunc=pythoncomplete#Complete
+au FileType javascript set omnifunc=javascriptcomplete#CompleteJS
+au FileType html set omnifunc=htmlcomplete#CompleteTags
+au FileType css set omnifunc=csscomplete#CompleteCSS
+au FileType xml set omnifunc=xmlcomplete#CompleteTags
+au FileType php set omnifunc=phpcomplete#CompletePHP
+au FileType c set omnifunc=ccomplete#Complete
 
-autocmd FileType ruby,eruby set omnifunc=rubycomplete#Complete
-autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1
-autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
+au FileType ruby,eruby set omnifunc=rubycomplete#Complete
+au FileType ruby,eruby let g:rubycomplete_buffer_loading = 1
+au FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
 
 augroup AutoMkdir
     autocmd!
