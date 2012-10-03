@@ -6,8 +6,8 @@
 #  Java
 #
 #export JAVA_HOME=$HOME/bin/soylatte16-i386-1.0
-export JAVA_VERSION=1.6
-#export JAVA_VERSION=1.7
+#export JAVA_VERSION=1.6
+export JAVA_VERSION=1.7
 #export JAVA_VERSION=1.5
 
 export JAVA_HOME=/System/Library/Frameworks/JavaVM.framework/Versions/$JAVA_VERSION/Home
@@ -21,19 +21,14 @@ export SCALA_PATH=$SCALA_HOME/bin
 export PATH=$PATH:$SCALA_PATH
 
 #
-# Clojure repl 
-#
-export PATH=$HOME/.cljr/bin:$PATH
-
-
-#
 #  Misc Development env vars
 #
 export JREBEL_JAR_PATH=$HOME/Applications/ZeroTurnaround/JRebel/jrebel.jar
 export JREBEL_OPTS="-noverify -javaagent:${JREBEL_JAR_PATH}"
 export SBT_OPTS="$JREBEL_OPTS  -Xmx1536m -XX:+CMSClassUnloadingEnabled -XX:MaxPermSize=384m -Dfile.encoding=UTF8 "
 
-export APPENGINE_SDK_HOME=/Applications/appengine/1.7.0/
+export GAE_SDK_VERSION=1.7.2.1
+export APPENGINE_SDK_HOME=/Applications/appengine/${GAE_SDK_VERSION}/
 
 export EDITOR=/Applications/MacVim.app/Contents/MacOS/Vim
 export SVN_EDITOR=$EDITOR
@@ -42,15 +37,10 @@ export SVN_EDITOR=$EDITOR
 #Home bin
 export PATH=$HOME/bin:$PATH
 
-#Python crap
-export PATH=/usr/local/share/python:$PATH
-
 
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
 # sources /etc/bash.bashrc).
-
-
 
 #system's bash completion
 if [ -f /etc/bash_completion ]; then
