@@ -7,7 +7,7 @@
 #
 #export JAVA_HOME=$HOME/bin/soylatte16-i386-1.0
 #export JAVA_VERSION=1.6
-export JAVA_VERSION=1.7
+#export JAVA_VERSION=1.7
 #export JAVA_VERSION=1.5
 
 export JAVA_HOME=/System/Library/Frameworks/JavaVM.framework/Versions/$JAVA_VERSION/Home
@@ -23,8 +23,8 @@ export PATH=$PATH:$SCALA_PATH
 #
 #  Misc Development env vars
 #
-export JREBEL_JAR_PATH=$HOME/Applications/ZeroTurnaround/JRebel/jrebel.jar
-export JREBEL_OPTS="-noverify -javaagent:${JREBEL_JAR_PATH}"
+export JREBEL_JAR=$HOME/Applications/ZeroTurnaround/JRebel/jrebel.jar
+export JREBEL_OPTS="-noverify -javaagent:${JREBEL_JAR}"
 export SBT_OPTS="$JREBEL_OPTS  -Xmx1536m -XX:+CMSClassUnloadingEnabled -XX:MaxPermSize=384m -Dfile.encoding=UTF8 "
 
 export GAE_SDK_VERSION=1.7.2.1
@@ -57,4 +57,7 @@ export PATH=$HOME_BREW_HOME/bin:$HOME_BREW_HOME/Cellar/python/2.7/bin:$HOME/Libr
 if [ -f `brew --prefix`/etc/bash_completion ]; then
   . `brew --prefix`/etc/bash_completion
 fi
+
+
+[ ! -z "which grc" ] && source "`brew --prefix`/etc/grc.bashrc"
 
