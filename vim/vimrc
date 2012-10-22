@@ -13,45 +13,46 @@ filetype plugin indent on         " Turn on file type detection.
 runtime keymaps.vim               " Load custom keymaps 
 runtime mine.vim                  " Load custom miscelaneous settings 
 
-runtime colors.vim                " Load custom colors settings 
+runtime colors.vim                    " Load custom colors settings 
 
-runtime macros/matchit.vim        " Load the matchit plugin.
+runtime macros/matchit.vim            " Load the matchit plugin.
 
-set showcmd                       " Display incomplete commands.
-set showmode                      " Display the mode you're in.
+set showcmd                           " Display incomplete commands.
+set showmode                          " Display the mode you're in.
 
-set backspace=indent,eol,start    " Intuitive backspacing.
+set backspace=indent,eol,start        " Intuitive backspacing.
 
-set hidden                        " Handle multiple buffers better.
+set hidden                            " Handle multiple buffers better.
 
-set wildmenu                      " Enhanced command line completion.
-set wildmode=list:longest         " Complete files like a shell.
+set wildmenu                          " Enhanced command line completion.
+set wildmode=list:longest             " Complete files like a shell.
 
-set ignorecase                    " Case-insensitive searching.
-set smartcase                     " But case-sensitive if expression contains a capital letter.
+set ignorecase                        " Case-insensitive searching.
+set smartcase                         " But case-sensitive if expression contains a capital letter.
 
-"set autoindent                   " always set autoindenting on
-"set copyindent                   " copy the previous indentation on autoindenting
+"set autoindent                       " always set autoindenting on
+"set copyindent                       " copy the previous indentation on autoindenting
 
-set number                        " Show line numbers.
-"set relativenumber               " Show relative line numbers.
-"
-set ruler                         
-set cursorline                    " Show cursor position.
+set number                            " Show line numbers.
+"set relativenumber                   " Show relative line numbers.
 
-set incsearch                     " Highlight matches as you type.
-set hlsearch                      " Highlight matches.
+set ruler                             
+set cursorline                        " Show cursor position.
 
-set scrolloff=0                   " Show 3 lines of context around the cursor.
+set incsearch                         " Highlight matches as you type.
+set hlsearch                          " Highlight matches.
 
-set title                         " Set the terminal's title
+set scrolloff=0                       " Show 3 lines of context around the cursor.
 
-set visualbell                    " No beeping.
+set title                             " Set the terminal's title
 
-set nobackup                          " Don't make a backup before overwriting a file.
-set nowritebackup                     " And again.
-"set directory=$HOME/.vim/backups//,.  " Keep swap files in one location
-"set backupdir=$HOME/.vim/backups//,. 
+set visualbell                        " No beeping.
+
+"set nobackup                          " Don't make a backup before overwriting a file.
+"set nowritebackup                     " And again.
+
+set directory=$HOME/.vimback//,.      " Keep swap files in one location
+set backupdir=$HOME/.vimback//,. 
 
 set history=1000                            " remember more commands and search history
 set undolevels=1000                         " use many muchos levels of undo
