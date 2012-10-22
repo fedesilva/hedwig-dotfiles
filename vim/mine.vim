@@ -1,3 +1,5 @@
+let g:user_zen_leader_key = '<c-y>'
+
 
 let g:ctrlp_map = ''
 let g:ctrlp_cmd = 'CtrlPMixed'
