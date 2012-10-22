@@ -1,0 +1,3 @@
+
+bind generic C !git commit -v
+bind generic F !git fetch
