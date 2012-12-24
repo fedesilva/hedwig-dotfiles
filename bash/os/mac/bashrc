@@ -3,3 +3,5 @@ if [ -f $HOME/.dotfiles/bash/init  ]; then
      . $HOME/.dotfiles/bash/init
 fi
 
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
