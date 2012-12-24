@@ -37,9 +37,6 @@ export SVN_EDITOR=$EDITOR
 #Home bin
 export PATH=$HOME/bin:$PATH
 
-#Python crap
-#export PATH=/usr/local/share/python:$PATH
-
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
 # sources /etc/bash.bashrc).
@@ -55,9 +52,11 @@ fi
 #  HomeBrew
 #
 export HOME_BREW_HOME=`brew --prefix`
-export PATH=$HOME_BREW_HOME/bin:$HOME_BREW_HOME/Cellar/python/2.7/bin:$HOME/Library/homebrew/sbin:$PATH
+export PATH=$HOME_BREW_HOME/bin:$PATH
 
 if [ -f `brew --prefix`/etc/bash_completion ]; then
   . `brew --prefix`/etc/bash_completion
 fi
+
+source `brew --prefix`/Library/Contributions/brew_bash_completion.sh
 
