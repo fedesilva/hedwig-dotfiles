@@ -50,8 +50,8 @@ set visualbell                    " No beeping.
 
 set nobackup                          " Don't make a backup before overwriting a file.
 set nowritebackup                     " And again.
-"set directory=$HOME/.vim/backups//,.  " Keep swap files in one location
-"set backupdir=$HOME/.vim/backups//,. 
+set directory=$HOME/.vimbackups//,.  " Keep swap files in one location
+set backupdir=$HOME/.vimbackups//,. 
 
 set history=1000                            " remember more commands and search history
 set undolevels=1000                         " use many muchos levels of undo
