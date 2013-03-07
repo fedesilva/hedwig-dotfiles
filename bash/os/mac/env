@@ -17,19 +17,14 @@ export SCALA_PATH=$SCALA_HOME/bin
 export PATH=$PATH:$SCALA_PATH
 
 #
-# Clojure repl 
-#
-export PATH=$HOME/.cljr/bin:$PATH
-
-
-#
 #  Misc Development env vars
 #
-export JREBEL_JAR_PATH=$HOME/Applications/ZeroTurnaround/JRebel/jrebel.jar
-export JREBEL_OPTS="-noverify -javaagent:${JREBEL_JAR_PATH}"
+export JREBEL_JAR=$HOME/Applications/ZeroTurnaround/JRebel/jrebel.jar
+export JREBEL_OPTS="-noverify -javaagent:${JREBEL_JAR}"
 export SBT_OPTS="$JREBEL_OPTS  -Xmx1536m -XX:+CMSClassUnloadingEnabled -XX:MaxPermSize=384m -Dfile.encoding=UTF8 "
 
-export APPENGINE_SDK_HOME=/Applications/appengine/1.7.0/
+export GAE_SDK_VERSION=1.7.2.1
+export APPENGINE_SDK_HOME=/Applications/appengine/${GAE_SDK_VERSION}/
 
 export EDITOR=/Applications/MacVim.app/Contents/MacOS/Vim
 export SVN_EDITOR=$EDITOR
@@ -40,7 +35,6 @@ export PATH=$HOME/bin:$PATH
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
 # sources /etc/bash.bashrc).
-
 
 #system's bash completion
 if [ -f /etc/bash_completion ]; then
@@ -59,4 +53,6 @@ if [ -f `brew --prefix`/etc/bash_completion ]; then
 fi
 
 source `brew --prefix`/Library/Contributions/brew_bash_completion.sh
+
+[ ! -z "which grc" ] && source "`brew --prefix`/etc/grc.bashrc"
 
