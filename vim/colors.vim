@@ -23,4 +23,4 @@ hi PmenuSel         guifg=White
 
 highlight CursorLine  term=standout  ctermbg=4 cterm=bold guibg=#252525
 
-
+highlight clear SignColumn

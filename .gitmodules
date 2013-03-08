@@ -79,6 +79,18 @@
 [submodule "vim/bundle/json"]
 	path = vim/bundle/json
 	url = https://github.com/elzr/vim-json.git
+[submodule "vim/bundle/scala"]
+	path = vim/bundle/scala
+	url = https://github.com/derekwyatt/vim-scala
+[submodule "vim/bundle/actionscript"]
+	path = vim/bundle/actionscript
+	url = https://github.com/jeroenbourgois/vim-actionscript.git
 [submodule "vim/bundle/solarized"]
 	path = vim/bundle/solarized
 	url = https://github.com/altercation/vim-colors-solarized.git
+[submodule "vim/bundle/gitgutter"]
+	path = vim/bundle/gitgutter
+	url = https://github.com/airblade/vim-gitgutter.git
+[submodule "quickfixsigns"]
+	path = quickfixsigns
+	url = https://github.com/tomtom/quickfixsigns_vim.git
