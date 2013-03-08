@@ -1,3 +1,7 @@
 
 bind generic C !git commit -v
 bind generic F !git fetch
+bind generic L !git pull
+bind generic P !git push
+
+
