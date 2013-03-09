@@ -81,7 +81,7 @@
 	url = https://github.com/elzr/vim-json.git
 [submodule "vim/bundle/scala"]
 	path = vim/bundle/scala
-	url = https://github.com/derekwyatt/vim-scala
+	url = https://github.com/derekwyatt/vim-scala.git
 [submodule "vim/bundle/actionscript"]
 	path = vim/bundle/actionscript
 	url = https://github.com/jeroenbourgois/vim-actionscript.git
