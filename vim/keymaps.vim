@@ -120,3 +120,5 @@ noremap <leader>lm :CtrlPMixed<cr>
 noremap <leader>lr :CtrlPMRU<cr>
 noremap <leader>lp :CtrlP
 
+nmap <leader>h] :GitGutterNextHunk<CR>
+nmap <leader>h[ :GitGutterPrevHunk<CR> 
