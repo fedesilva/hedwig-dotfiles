@@ -119,6 +119,15 @@ au FileType ruby,eruby set omnifunc=rubycomplete#Complete
 au FileType ruby,eruby let g:rubycomplete_buffer_loading = 1
 au FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
 
+
+set errorformat=%E\ %#[error]\ %#%f:%l:\ %m,%-Z\ %#[error]\ %p^,%-C\ %#[error]\ %m
+set errorformat+=,%W\ %#[warn]\ %#%f:%l:\ %m,%-Z\ %#[warn]\ %p^,%-C\ %#[warn]\ %m
+set errorformat+=,%-G%.%#
+
+noremap <silent> <Leader>ff :cf target/quickfix/sbt.quickfix<CR>
+noremap <silent> <Leader>fn :cn<CR>
+
+
 augroup AutoMkdir
     autocmd!
     autocmd  BufNewFile  *  :call EnsureDirExists()
@@ -129,6 +138,23 @@ function! EnsureDirExists ()
         call mkdir(required_dir, 'p')
     endif
 endfunction
+
+function UpdateModifiable()
+  if !exists("b:setmodifiable")
+    let b:setmodifiable = 0
+  endif
+  if &readonly
+    if &modifiable
+      setlocal nomodifiable
+      let b:setmodifiable = 1
+    endif
+  else
+    if b:setmodifiable
+      setlocal modifiable
+    endif
+  endif
+endfunction
+autocmd BufReadPost * call UpdateModifiable()
 
 
 set errorformat=%E\ %#[error]\ %#%f:%l:\ %m,%-Z\ %#[error]\ %p^,%-C\ %#[error]\ %m
