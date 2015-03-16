@@ -67,9 +67,6 @@
 [submodule "vim/bundle/nerdcommenter"]
 	path = vim/bundle/nerdcommenter
 	url = https://github.com/scrooloose/nerdcommenter.git
-[submodule "vim/bundle/zen-coding"]
-	path = vim/bundle/zen-coding
-	url = https://github.com/mattn/zencoding-vim
 [submodule "vim/bundle/speeddating"]
 	path = vim/bundle/speeddating
 	url = https://github.com/mirrormirror/vim-speeddating.git

@@ -39,7 +39,6 @@ alias jrs="jruby -S"
 alias jr=jruby
 alias jk="jruby -S rake"
 
-alias tar=gnutar
 
 #
 #  GIT aliases

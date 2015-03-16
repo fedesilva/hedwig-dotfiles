@@ -2,5 +2,18 @@ if [ -f $HOME/.bashrc ]; then
       . $HOME/.bashrc
 fi
 
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"  # This loads RVM into a shell session.
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+PATH=${PATH}:${HOME}/bin/scalikejdbc-cli
+
+if which gpg-agent > /dev/null; then eval $(gpg-agent --daemon --allow-preset-passphrase); fi
+
+# OPAM configuration
+. /Users/f/.opam/opam-init/init.sh > /dev/null 2> /dev/null || true
+
+
+if [ -f $HOME/.dotfiles/bash/init  ]; then
+     . $HOME/.dotfiles/bash/init
+fi
+
+
 
