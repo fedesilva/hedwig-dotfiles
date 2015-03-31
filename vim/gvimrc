@@ -1,6 +1,8 @@
 " Vim graphical configuration.
 " Link to ~/.gvimrc or ~/_gvimrc.
 
+colorscheme solarized
+set background=dark
 set guifont=Inconsolata-dz:h14            " Font family and font size.
 set antialias                     " MacVim: smooth fonts.
 set encoding=utf-8                " Use UTF-8 everywhere.

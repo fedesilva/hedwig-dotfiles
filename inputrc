@@ -4,10 +4,8 @@
 "\e[6~": end-of-history
 "\e[3~": delete-char
 "\e[2~": quoted-insert
-"\e[5C": forward-word
-"\e[5D": backward-word
-"\e\e[C": forward-word
-"\e\e[D": backward-word
+#"\e[C": forward-word
+#"\e[D": backward-word
 "\ep": history-search-backward
 "\es": history-search-forward
 

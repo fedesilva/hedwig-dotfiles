@@ -21,8 +21,8 @@ alias brh="br home"
 #
 #  Make MacVim the default vim
 #
-alias vi='/Applications/MacVim.app/Contents/MacOS/Vim'
-alias vim='/Applications/MacVim.app/Contents/MacOS/Vim'
+#alias vi='/Applications/MacVim.app/Contents/MacOS/Vim'
+#alias vim='/Applications/MacVim.app/Contents/MacOS/Vim'
 
 #
 # Terminitor
@@ -39,7 +39,6 @@ alias jrs="jruby -S"
 alias jr=jruby
 alias jk="jruby -S rake"
 
-alias tar=gnutar
 
 #
 #  GIT aliases
