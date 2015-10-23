@@ -9,3 +9,6 @@ tags
 
 atlassian-ide-plugin.xml
 atlassian-ide-plugin.xml
+*.iml
+.DS_Store
+.idea/

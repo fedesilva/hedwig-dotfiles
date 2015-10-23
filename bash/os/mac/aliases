@@ -52,6 +52,7 @@ alias gca="git commit -av"
 alias gcl="git log --graph"
 alias gl="git lol"
 alias gla="git lola"
+alias gms="git merge --squash"
 
 alias gw="git whatchanged"
 alias gwp="git whatchanged -p"
