@@ -91,9 +91,6 @@
 [submodule "vim/bundle/quickfixsigns"]
 	path = vim/bundle/quickfixsigns
 	url = git://github.com/tomtom/quickfixsigns_vim.git
-[submodule "vim/bundle/covim"]
-	path = vim/bundle/covim
-	url = git://github.com/FredKSchott/CoVim.git
 [submodule "vim/bundle/funcoo"]
 	path = vim/bundle/funcoo
 	url = https://github.com/rizzatti/funcoo.vim.git
