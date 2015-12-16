@@ -42,7 +42,7 @@ set cursorline                        " Show cursor position.
 set incsearch                         " Highlight matches as you type.
 set hlsearch                          " Highlight matches.
 
-set scrolloff=0                       " Show 3 lines of context around the cursor.
+set scrolloff=0                       " Show X lines of context around the cursor.
 
 set title                             " Set the terminal's title
 
@@ -96,6 +96,8 @@ au FileType scala setlocal shiftwidth=2
 "au FileType scala setlocal foldmethod=indent shiftwidth=2 tabstop=2
 
 au BufNewFile,BufRead *.sbt setf scala
+
+au BufNewFile,BufRead *.mml setf ocaml
 
 au BufNewFile,BufRead *.ssp setf html
 au BufNewFile,BufRead *.scaml setf haml
@@ -155,6 +157,8 @@ function UpdateModifiable()
   endif
 endfunction
 autocmd BufReadPost * call UpdateModifiable()
+
+autocmd BufWritePost,WinEnter,BufFilePost * :CtrlPClearAllCaches
 
 
 
