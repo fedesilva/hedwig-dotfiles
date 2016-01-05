@@ -122,14 +122,6 @@ au FileType ruby,eruby let g:rubycomplete_buffer_loading = 1
 au FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
 
 
-set errorformat=%E\ %#[error]\ %#%f:%l:\ %m,%-Z\ %#[error]\ %p^,%-C\ %#[error]\ %m
-set errorformat+=,%W\ %#[warn]\ %#%f:%l:\ %m,%-Z\ %#[warn]\ %p^,%-C\ %#[warn]\ %m
-set errorformat+=,%-G%.%#
-
-noremap <silent> <Leader>ff :cf target/quickfix/sbt.quickfix<CR>
-noremap <silent> <Leader>fn :cn<CR>
-
-
 augroup AutoMkdir
     autocmd!
     autocmd  BufNewFile  *  :call EnsureDirExists()
