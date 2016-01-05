@@ -97,3 +97,6 @@
 [submodule "vim/bundle/prolog"]
 	path = vim/bundle/prolog
 	url = git@github.com:adimit/prolog.vim.git
+[submodule "vim/bundle/ensime-vim"]
+	path = vim/bundle/ensime-vim
+	url = git@github.com:ensime/ensime-vim.git
