@@ -61,8 +61,8 @@ map <leader>rJ :Rjavascript
 ":map ,cp :cprevious<cr>
 "
 
-map <leader>X :bd
-map <leader>x :bd<cr>
+map <leader>X :BD
+map <leader>x :BD<cr>
 "map <leader>l :ls<cr>
 map <leader>b :b 
 map <leader><space> :b 

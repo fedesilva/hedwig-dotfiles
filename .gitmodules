@@ -97,3 +97,6 @@
 [submodule "vim/bundle/prolog"]
 	path = vim/bundle/prolog
 	url = git@github.com:adimit/prolog.vim.git
+[submodule "vim/bundle/vim-bufkill"]
+	path = vim/bundle/vim-bufkill
+	url = git@github.com:qpkorr/vim-bufkill.git
