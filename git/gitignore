@@ -12,3 +12,8 @@ atlassian-ide-plugin.xml
 *.iml
 .DS_Store
 .idea/
+.ensime*
+hs_err_*
+.tags
+*.sublime-project
+*.sublime-*

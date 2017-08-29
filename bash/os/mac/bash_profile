@@ -3,17 +3,34 @@ if [ -f $HOME/.bashrc ]; then
 fi
 
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
-PATH=${PATH}:${HOME}/bin/scalikejdbc-cli
 
-if which gpg-agent > /dev/null; then eval $(gpg-agent --daemon --allow-preset-passphrase); fi
+
+if [ -f ~/.gpg-agent-info ]; then
+  source ~/.gpg-agent-info
+  export GPG_AGENT_INFO
+else
+  if which gpg-agent > /dev/null; then eval $(gpg-agent --daemon --allow-preset-passphrase --write-env-file ~/.gpg-agent-info); fi
+fi
 
 # OPAM configuration
-. /Users/f/.opam/opam-init/init.sh > /dev/null 2> /dev/null || true
-
+#. /Users/f/.opam/opam-init/init.sh > /dev/null 2> /dev/null || true
 
 if [ -f $HOME/.dotfiles/bash/init  ]; then
      . $HOME/.dotfiles/bash/init
 fi
 
 
+DEP_OPENSSL_INCLUDE=`brew --prefix openssl`/include
+OPENSSL_INCLUDE_DIR=`brew --prefix openssl`/include
+
+
+# The next line updates PATH for the Google Cloud SDK.
+source '/Users/f/Applications/google-cloud-sdk/path.bash.inc'
+
+# The next line enables shell command completion for gcloud.
+source '/Users/f/Applications/google-cloud-sdk/completion.bash.inc'
+
+if [ -f $(brew --prefix)/etc/bash_completion ]; then
+  . $(brew --prefix)/etc/bash_completion
+fi
 

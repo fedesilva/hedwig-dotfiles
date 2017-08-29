@@ -100,3 +100,15 @@
 [submodule "vim/bundle/vim-bufkill"]
 	path = vim/bundle/vim-bufkill
 	url = git@github.com:qpkorr/vim-bufkill.git
+[submodule "vim/bundle/antlr-syntax"]
+	path = vim/bundle/antlr-syntax
+	url = https://github.com/jrozner/vim-antlr.git
+[submodule "vim/bundle/hocon"]
+	path = vim/bundle/hocon
+	url = https://github.com/GEverding/vim-hocon.git
+[submodule "vim/bundle/vim-rust"]
+	path = vim/bundle/vim-rust
+	url = https://github.com/rust-lang/rust.vim.git
+[submodule "vim/bundle/vim-qml"]
+	path = vim/bundle/vim-qml
+	url = https://github.com/peterhoeg/vim-qml.git

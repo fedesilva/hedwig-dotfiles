@@ -22,6 +22,8 @@ export SBT_OPTS=" $RELOADER_OPTS  -Xmx1536m -XX:+CMSClassUnloadingEnabled -Dfile
 #Home bin
 export PATH=$HOME/bin:$PATH
 
+export PATH=/usr/local/bin:$PATH
+
 
 # Cabal
 export PATH=~/.cabal/bin:$PATH
@@ -46,11 +48,10 @@ fi
 export HOME_BREW_HOME=`brew --prefix`
 export PATH=$HOME_BREW_HOME/bin:$PATH
 
-if [ -f `brew --prefix`/etc/bash_completion ]; then
-  . `brew --prefix`/etc/bash_completion
-fi
+#if [ -f $(brew --prefix)/etc/bash_completion ]; then
+#  . $(brew --prefix)/etc/bash_completion
+#fi
 
-source `brew --prefix`/Library/Contributions/brew_bash_completion.sh
 
 [ ! -z "which grc" ] && source "`brew --prefix`/etc/grc.bashrc"
 

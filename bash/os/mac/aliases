@@ -1,6 +1,20 @@
 #vim: set filetype=sh
 #echo "Custom aliases"
 
+
+#
+# Docker aliases
+#
+alias dk=docker
+alias dis="docker images"
+alias din="docker inspect"
+alias dps="docker ps"
+
+alias dc=docker-compose
+alias dcps="docker-compose ps"
+alias dce="docker-compose exec"
+
+
 #
 # ls aliases enable color support of ls and also add handy aliases
 #

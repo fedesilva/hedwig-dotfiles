@@ -56,7 +56,7 @@ set backupdir=$HOME/.vimback//,.
 
 set history=1000                            " remember more commands and search history
 set undolevels=1000                         " use many muchos levels of undo
-set wildignore=*.swp,*.bak,*.pyc,*.class,target
+set wildignore=*.swp,*.bak,*.pyc,*.class,target,node_modules
 
 
 " 
