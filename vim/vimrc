@@ -51,8 +51,12 @@ set visualbell                        " No beeping.
 "set nobackup                          " Don't make a backup before overwriting a file.
 "set nowritebackup                     " And again.
 
-set directory=$HOME/.vimback//,.      " Keep swap files in one location
-set backupdir=$HOME/.vimback//,. 
+"set directory=$HOME/.vimback/          " Keep swap files in one location
+"set backupdir=$HOME/.vimback/ 
+
+set backupdir=.backup/,~/.backup/,/tmp//
+set directory=.swp/,~/.swp/,/tmp//
+set undodir=.undo/,~/.undo/,/tmp//
 
 set history=1000                            " remember more commands and search history
 set undolevels=1000                         " use many muchos levels of undo
@@ -101,7 +105,7 @@ au FileType scala setlocal shiftwidth=2
 " au FileType scala setlocal foldmethod=syntax
 "au FileType scala setlocal foldmethod=indent shiftwidth=2 tabstop=2
 
-au BufNewFile,BufRead *.sbt setf scala
+"au BufNewFile,BufRead *.sbt setf scala
 
 au BufNewFile,BufRead *.mml setf ocaml
 
@@ -158,5 +162,19 @@ autocmd BufReadPost * call UpdateModifiable()
 
 autocmd BufWritePost,WinEnter,BufFilePost * :CtrlPClearAllCaches
 
+" Configuration for vim-scala
+au BufRead,BufNewFile *.sbt set filetype=scala
+
+" Configuration for vim-lsc
+let g:lsc_enable_autocomplete = v:false
+let g:lsc_server_commands = {
+  \  'scala': {
+  \    'command': 'metals-vim',
+  \    'log_level': 'Log'
+  \  }
+  \}
+let g:lsc_auto_map = {
+  \  'GoToDefinition': 'gd',
+  \}
 
 
