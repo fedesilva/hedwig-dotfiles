@@ -112,6 +112,6 @@
 [submodule "vim/bundle/vim-qml"]
 	path = vim/bundle/vim-qml
 	url = https://github.com/peterhoeg/vim-qml.git
-[submodule "vim/bundle/vim-lsc"]
-	path = vim/bundle/vim-lsc
-	url = git@github.com:natebosch/vim-lsc.git
+[submodule "vim/bundle/coc-vim"]
+	path = vim/bundle/coc-vim
+	url = git@github.com:neoclide/coc.nvim.git
