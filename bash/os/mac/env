@@ -25,13 +25,6 @@ export PATH=$HOME/bin:$PATH
 export PATH=/usr/local/bin:$PATH
 
 
-# Cabal
-export PATH=~/.cabal/bin:$PATH
-
-#ChefDK
-export PATH=/opt/chefdk/bin:$PATH
-
-
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
 # sources /etc/bash.bashrc).
