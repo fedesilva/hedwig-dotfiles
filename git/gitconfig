@@ -2,7 +2,7 @@
 	name = fedesilva
 	email = fede.silva@gmail.com
 [core]
-	excludesfile = /Users/f/.gitignore
+	excludesfile = /Users/fsilva/.gitignore_global
 	editor = vim
 	quotepath = false
 [color]
@@ -45,7 +45,7 @@
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 	path = 
 [mergetool "sourcetree"]
-	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
 [push]
   #default = simple

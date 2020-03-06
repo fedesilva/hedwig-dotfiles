@@ -1,10 +1,6 @@
 
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
-alias okta-aws='f(){ cmd="docker run -it --rm -v ~/.aws:/package/.aws okta-aws sh -c \"python /package/samlapi.py "$@"\""; bash -c "${cmd}" u  nset -f f; }; f'
-alias get-redt-aws-token="okta-aws --env prod --account 758374777033 --role AWS-Developer --duration-hours 8 --region us-east-1 --profile default"
-alias wek8s-dev-token='okta-aws --env dev --account 037607304605 --role AWS-Tech-User --duration-hours 8 --region us-east-1'
-
 export NVM_DIR="$HOME/.nvm"
 [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
 [ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
