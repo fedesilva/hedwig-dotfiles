@@ -3,6 +3,7 @@
 
 set nocompatible                  " Must come first because it changes other options.
 
+execute pathogen#infect()
 silent! call pathogen#helptags()
 silent! call pathogen#runtime_append_all_bundles()
 
@@ -14,6 +15,8 @@ runtime keymaps.vim               " Load custom keymaps
 runtime mine.vim                  " Load custom miscelaneous settings 
 
 runtime colors.vim                    " Load custom colors settings 
+
+colorscheme solarized8
 
 runtime macros/matchit.vim            " Load the matchit plugin.
 
