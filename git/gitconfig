@@ -2,7 +2,7 @@
 	name = fedesilva
 	email = fede.silva@gmail.com
 [core]
-	excludesfile = /Users/fsilva/.gitignore_global
+	excludesfile = /Users/fsilva/.gitignore
 	editor = vim
 	quotepath = false
 [color]
@@ -27,6 +27,16 @@
   lol = log --graph --decorate --pretty=oneline --abbrev-commit
   lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
   ls = ls-files
+	append = town append
+	hack = town hack
+	kill = town kill
+	new-pull-request = town new-pull-request
+	prepend = town prepend
+	prune-branches = town prune-branches
+	rename-branch = town rename-branch
+	repo = town repo
+	ship = town ship
+	sync = town sync
 
 [difftool "Kaleidoscope"]
 	cmd = ksdiff-wrapper git \"$LOCAL\" \"$REMOTE\"
@@ -57,3 +67,5 @@
 	clean = git media clean %f
 	smudge = git media smudge %f
 	required = true
+[gc]
+	autoDetach = false

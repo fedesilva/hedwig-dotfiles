@@ -41,10 +41,6 @@ fi
 export HOME_BREW_HOME=`brew --prefix`
 export PATH=$HOME_BREW_HOME/bin:$PATH
 
-#if [ -f $(brew --prefix)/etc/bash_completion ]; then
-#  . $(brew --prefix)/etc/bash_completion
-#fi
-
 
 [ ! -z "which grc" ] && source "`brew --prefix`/etc/grc.bashrc"
 

@@ -1,3 +1,4 @@
+
 if [ -f $HOME/.bashrc ]; then
       . $HOME/.bashrc
 fi
@@ -23,7 +24,16 @@ fi
 DEP_OPENSSL_INCLUDE=`brew --prefix openssl`/include
 OPENSSL_INCLUDE_DIR=`brew --prefix openssl`/include
 
-if [ -f $(brew --prefix)/etc/bash_completion ]; then
-  . $(brew --prefix)/etc/bash_completion
+if [ -d $(brew --prefix)/etc/bash_completion.d ]; then
+  DIR=$(brew --prefix)/etc/bash_completion.d/
+  FILES=`ls $DIR/*.bash`
+  for F in $FILES
+  do
+    . $F
+  done
 fi
+
+export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
+export JAVA_PATH=$JAVA_HOME/bin
+export PATH=$JAVA_PATH:$PATH
 
