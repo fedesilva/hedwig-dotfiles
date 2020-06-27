@@ -3,6 +3,12 @@ if [ -f $HOME/.bashrc ]; then
       . $HOME/.bashrc
 fi
 
+export BASH_SILENCE_DEPRECATION_WARNING=1
+
+export PATH="$HOME/.jenv/bin:$PATH"
+eval "$(jenv init -)"
+
+
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
 
@@ -32,8 +38,4 @@ if [ -d $(brew --prefix)/etc/bash_completion.d ]; then
     . $F
   done
 fi
-
-export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
-export JAVA_PATH=$JAVA_HOME/bin
-export PATH=$JAVA_PATH:$PATH
 
