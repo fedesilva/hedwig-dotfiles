@@ -1,20 +1,12 @@
 [user]
 	name = fedesilva
-	email = fede.silva@gmail.com
+	email = federico.silva@flyzipline.com
 [core]
-	excludesfile = /Users/fsilva/.gitignore
 	editor = vim
 	quotepath = false
+	excludesFile = ~/.gitignore
 [color]
 	ui = true
-
-#[merge]
-#          tool = extMerge
-#[mergetool "extMerge"]
-#          cmd = extMerge  "$BASE" "$LOCAL" "$REMOTE" "$MERGED"
-#            trustExitCode = false
-#[diff]
-#          external = extDiff
 
 [alias]
 	co = checkout
@@ -37,35 +29,3 @@
 	repo = town repo
 	ship = town ship
 	sync = town sync
-
-[difftool "Kaleidoscope"]
-	cmd = ksdiff-wrapper git \"$LOCAL\" \"$REMOTE\"
-
-[difftool "SmartDiff"]
-	cmd = /Applications/SmartSynchronize.app/smartsynchronize.sh \"$LOCAL\" \"$REMOTE\"
-
-[difftool]
-	prompt = false
-
-[diff]
-	tool = SmartDiff
-[github]
-	user = fedesilva
-[difftool "sourcetree"]
-	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path = 
-[mergetool "sourcetree"]
-	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-	trustExitCode = true
-[push]
-  #default = simple
-[mergetool]
-	keepBackup = true
-[push]
-	default = simple
-[filter "media"]
-	clean = git media clean %f
-	smudge = git media smudge %f
-	required = true
-[gc]
-	autoDetach = false

@@ -17,3 +17,24 @@ hs_err_*
 .tags
 *.sublime-project
 *.sublime-*
+
+build/
+dist/
+*.egg-info/
+**/__pycache__/
+proto/test*
+.coverage
+venv/
+.DS_Store
+.devcontainer/.env
+*.swp
+
+
+# IDE specific files
+*.idea/
+.vscode/settings.json
+
+debug.log
+
+todo.fede.md
+.history
