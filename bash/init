@@ -22,6 +22,3 @@ if [ -f $HOME/.dotfiles/bash/os/$OS/aliases  ]; then
     . $HOME/.dotfiles/bash/os/$OS/aliases
 fi
 
-
-
-
