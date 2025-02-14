@@ -71,7 +71,8 @@ return {
         group = nvim_metals_group,
       })
     end
-  }
-
+  },
+  { 'esensar/nvim-dev-container' },
+  { 'neovim/nvim-lspconfig' }
 }
 
