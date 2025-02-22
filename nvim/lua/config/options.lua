@@ -9,7 +9,6 @@ vim.g.loaded_netrwPlugin = 1
 vim.opt.termguicolors = true
 vim.cmd("colorscheme catppuccin-mocha")
 
-
 -- width of a tab
 vim.opt.shiftwidth = 2
 vim.opt.tabstop = 2

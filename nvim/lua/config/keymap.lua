@@ -13,10 +13,6 @@ vim.api.nvim_set_keymap('n', '<leader>n', ':Neotree toggle<CR>', { noremap = tru
 -- vim.api.nvim_set_keymap('n', '<leader>f', 'NvimTreeFocus<CR>', { noremap = true })
 vim.api.nvim_set_keymap('n', '<leader>m', ':Neotree close<CR>', { noremap = true })
 
--- vim.api.nvim_set_keymap('n', '<leader>n', ':NvimTreeToggle<CR>', { noremap = true })
--- vim.api.nvim_set_keymap('n', '<leader>f', 'NvimTreeFocus<CR>', { noremap = true })
--- vim.api.nvim_set_keymap('n', '<leader>m', ':NvimTreeClose<CR>', { noremap = true })
-
 -- No highlight search mapping
 -- vim.api.nvim_set_keymap('n', '<Leader>/', ':nohlsearch<CR>', { noremap = true })
 
