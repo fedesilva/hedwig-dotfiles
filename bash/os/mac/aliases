@@ -74,3 +74,5 @@ alias gwp="git whatchanged -p"
 
 alias ta="tig --all"
 
+alias vi=nvim
+alias vim=nvim
