@@ -42,7 +42,7 @@ vim.api.nvim_set_keymap('n', '<leader>x', ':bd <CR>', { noremap = true })
 
 
 -- Mappings to reload configuration files
-vim.api.nvim_set_keymap('n', ',uv', ':source ~/.config/nvim/init.lua<CR>', { noremap = true })
+vim.api.nvim_set_keymap('n', ',vk', ':vi ~/.config/nvim/lua/config/keymap.lua<CR>', { noremap = true })
 vim.api.nvim_set_keymap('n', ',uk', ':source ~/.config/nvim/lua/config/keymap.lua<CR>', { noremap = true })
 
 -- Toggle number settings
