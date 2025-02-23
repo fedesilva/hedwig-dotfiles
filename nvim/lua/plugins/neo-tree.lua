@@ -7,6 +7,10 @@ return {
       filesystem = {
         follow_current_file = true, -- Auto-update Neotree when switching buffers
       },
+      sources = { "filesystem", "buffers" }, -- Enable buffers in NeoTree
+      buffers = {
+        follow_current_file = true, -- Auto-update NeoTree when switching buffers
+      },
     })
 
     -- Auto-reveal the current file in Neotree when changing buffers

@@ -7,7 +7,8 @@ vim.api.nvim_set_keymap('n', 'j', 'gj', { noremap = true })
 vim.api.nvim_set_keymap('n', 'k', 'gk', { noremap = true })
 
 -- Tree Mappings
-vim.api.nvim_set_keymap('n', '<leader>n', ':Neotree toggle<CR>', { noremap = true })
+vim.api.nvim_set_keymap('n', '<leader>nn', ':Neotree toggle<CR>', { noremap = true })
+vim.api.nvim_set_keymap('n', '<leader>nb', ':Neotree buffers<CR>', { noremap = true })
 -- vim.api.nvim_set_keymap('n', '<leader>f', 'NvimTreeFocus<CR>', { noremap = true })
 vim.api.nvim_set_keymap('n', '<leader>m', ':Neotree close<CR>', { noremap = true })
 
