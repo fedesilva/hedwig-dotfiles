@@ -9,6 +9,7 @@ vim.opt.number = true
 vim.opt.termguicolors = true
 vim.cmd("colorscheme catppuccin-mocha")
 
+
 -- width of a tab
 vim.opt.shiftwidth = 2
 vim.opt.tabstop = 2
@@ -29,10 +30,22 @@ vim.opt.autoindent = true  -- Always set autoindenting on
 -- vim.opt.copyindent = true  -- Copy the previous indentation on autoindenting (commented out)
 
 vim.opt.number = true  -- Show line numbers.
--- vim.opt.relativenumber = true  -- Show relative line numbers (commented out).
 
 vim.opt.ruler = true  -- Show the ruler.
 vim.opt.cursorline = true  -- Highlight the current line.
+
+-- 📌 This sets:
+-- A white cursor in normal mode
+-- A yellow cursor in insert mode
+vim.opt.termguicolors = true
+vim.cmd([[highlight Cursor guifg=black guibg=white]])
+vim.cmd([[highlight iCursor guifg=black guibg=yellow]])
+vim.cmd([[set guicursor+=i:ver25-iCursor]])
+
+-- Hide the cursor while typing
+vim.opt.mousehide = true
+
+
 
 vim.opt.incsearch = true  -- Incremental search, highlight matches as you type.
 vim.opt.hlsearch = true  -- Highlight matches.

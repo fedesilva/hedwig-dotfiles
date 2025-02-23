@@ -1,4 +1,3 @@
-
 -- Save one key stroke by remapping semicolon to colon
 vim.api.nvim_set_keymap('n', ';', ':', { noremap = true })
 
@@ -21,7 +20,11 @@ vim.api.nvim_set_keymap('n', '<Leader>w', ':set wrap! wrap?<CR>', { noremap = tr
 -- Copilot
 -- Keymap to accept GitHub Copilot suggestion
 vim.api.nvim_set_keymap("i", "<C-j>", 'copilot#Accept("<C-K>")', { silent = true, expr = true })
-vim.g.copilot_no_tab_map = true  -- Prevent Copilot from hijacking <Tab>
+vim.api.nvim_set_keymap("i", "<C-k>", 'copilot#AcceptWord()', { silent = true, expr = true })
+vim.api.nvim_set_keymap("i", "<C-l>", 'copilot#AcceptLine()', { silent = true, expr = true })
+
+vim.g.copilot_no_tab_map = true -- Prevent Copilot from hijacking <Tab>
+
 
 
 -- Buffer management mappings
@@ -63,11 +66,17 @@ vim.keymap.set("n", "<leader>ld", telescope.lsp_definitions, { noremap = true, s
 vim.keymap.set("n", "<leader>lg", telescope.live_grep, { noremap = true, silent = true, desc = "Live grep in project" })
 
 -- Search workspace symbols
-vim.keymap.set("n", "<leader>ws", telescope.lsp_dynamic_workspace_symbols, { noremap = true, silent = true, desc = "Search workspace symbols" })
+vim.keymap.set("n", "<leader>ws", telescope.lsp_dynamic_workspace_symbols,
+  { noremap = true, silent = true, desc = "Search workspace symbols" })
 
 vim.keymap.set("n", "<leader>lq", telescope.quickfix, { noremap = true, silent = true, desc = "Quickfix list" })
 
 vim.keymap.set("n", "<leader>lr", telescope.lsp_references, { noremap = true, silent = true, desc = "LSP references" })
+
+vim.keymap.set("n", "<leader>lw", telescope.lsp_dynamic_workspace_symbols,
+  { noremap = true, silent = true, desc = "LSP code actions" })
+
+vim.keymap.set("n", "<leader>lt", ":TodoTelescope<cr>", { noremap = true, silent = true, desc = "LSP code actions" })
 
 vim.keymap.set("n", "<leader>f", function()
   if vim.bo.filetype == "scala" then
@@ -86,6 +95,15 @@ vim.keymap.set("n", "<leader>ls", function()
   vim.lsp.buf.signature_help()
 end, { noremap = true, silent = true, desc = "Show function signature help" })
 
+vim.keymap.set("n", "<leader>la", function()
+  vim.lsp.buf.code_action()
+end, { noremap = true, silent = true, desc = "Show code actions" })
+
+vim.keymap.set("n", "<leader>rn", function()
+  vim.lsp.buf.rename()
+end, { noremap = true, silent = true })
+
+
 
 
 -- Save file with Cmd+S in Normal and Insert Mode
@@ -93,7 +111,9 @@ end, { noremap = true, silent = true, desc = "Show function signature help" })
 vim.keymap.set("n", "<D-s>", ":w<CR>", { noremap = true, silent = true, desc = "Save file (Cmd+S)" })
 vim.keymap.set("i", "<D-s>", "<C-O>:w<CR>", { noremap = true, silent = true, desc = "Save file (Cmd+S)" })
 
-
+--
+-- Fugitive mappings (Git)
+--
 vim.keymap.set("n", "<leader>gs", ":Git<CR>", { noremap = true, silent = true, desc = "Open Git status" })
 vim.keymap.set("n", "<leader>gc", ":Git commit<CR>", { noremap = true, silent = true, desc = "Git commit" })
 vim.keymap.set("n", "<leader>gp", ":Git push<CR>", { noremap = true, silent = true, desc = "Git push" })
@@ -102,5 +122,3 @@ vim.keymap.set("n", "<leader>gb", ":Gblame<CR>", { noremap = true, silent = true
 vim.keymap.set("n", "<leader>gd", ":Gdiffsplit<CR>", { noremap = true, silent = true, desc = "Git diff" })
 vim.keymap.set("n", "<leader>gr", ":Gread<CR>", { noremap = true, silent = true, desc = "Reset file to last commit" })
 vim.keymap.set("n", "<leader>gw", ":Gwrite<CR>", { noremap = true, silent = true, desc = "Stage current file" })
-
-

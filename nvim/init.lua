@@ -10,8 +10,10 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 -- Set leader key to ','
+-- Needs to be set before loading plugins :shrug:
 vim.g.mapleader = ','
 
 require("lazy").setup("plugins")
 require("config.keymap")
 require("config.options")
+require("config.autocmds")

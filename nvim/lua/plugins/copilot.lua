@@ -6,13 +6,6 @@ return {
     vim.g.copilot_assume_mapped = true  -- Assume manual key mapping
     vim.g.copilot_filetypes = {         -- Enable Copilot for specific filetypes
       ["*"] = true,
-      ["markdown"] = true,
-      ["lua"] = true,
-      ["python"] = true,
-      ["javascript"] = true,
-      ["typescript"] = true,
-      ["go"] = true,
-      ["scala"] = true,
     }
   end,
 }
