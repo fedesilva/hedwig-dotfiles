@@ -1,6 +1,8 @@
 return {
   "ibhagwan/fzf-lua",
+
   dependencies = { "nvim-tree/nvim-web-devicons" },
+  enabled = false,  -- 🔴 This disables the plugin
   config = function()
     require("fzf-lua").setup({
       winopts = {
