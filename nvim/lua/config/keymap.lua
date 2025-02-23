@@ -84,3 +84,22 @@ end, { noremap = true, silent = true, desc = "Show function signature help" })
 vim.keymap.set("n", "<leader>ls", function()
   vim.lsp.buf.signature_help()
 end, { noremap = true, silent = true, desc = "Show function signature help" })
+
+
+
+-- Save file with Cmd+S in Normal and Insert Mode
+-- saves me from pressing cmd+s unconfigured that breaks the code
+vim.keymap.set("n", "<D-s>", ":w<CR>", { noremap = true, silent = true, desc = "Save file (Cmd+S)" })
+vim.keymap.set("i", "<D-s>", "<C-O>:w<CR>", { noremap = true, silent = true, desc = "Save file (Cmd+S)" })
+
+
+vim.keymap.set("n", "<leader>gs", ":Git<CR>", { noremap = true, silent = true, desc = "Open Git status" })
+vim.keymap.set("n", "<leader>gc", ":Git commit<CR>", { noremap = true, silent = true, desc = "Git commit" })
+vim.keymap.set("n", "<leader>gp", ":Git push<CR>", { noremap = true, silent = true, desc = "Git push" })
+vim.keymap.set("n", "<leader>gl", ":Glog<CR>", { noremap = true, silent = true, desc = "View Git log" })
+vim.keymap.set("n", "<leader>gb", ":Gblame<CR>", { noremap = true, silent = true, desc = "Git blame" })
+vim.keymap.set("n", "<leader>gd", ":Gdiffsplit<CR>", { noremap = true, silent = true, desc = "Git diff" })
+vim.keymap.set("n", "<leader>gr", ":Gread<CR>", { noremap = true, silent = true, desc = "Reset file to last commit" })
+vim.keymap.set("n", "<leader>gw", ":Gwrite<CR>", { noremap = true, silent = true, desc = "Stage current file" })
+
+
