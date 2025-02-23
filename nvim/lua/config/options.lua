@@ -82,3 +82,7 @@ vim.opt.foldnestmax = 10        -- Deepest fold is 10 levels
 vim.opt.foldenable = false      -- Don't fold by default
 vim.opt.foldlevel = 1           -- This sets the initial fold level
 
+vim.diagnostic.setqflist()
+vim.diagnostic.setqflist({severity = vim.diagnostic.severity.ERROR})
+vim.diagnostic.setqflist({severity = vim.diagnostic.severity.WARN})
+
