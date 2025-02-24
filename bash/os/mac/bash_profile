@@ -39,6 +39,8 @@ if [ -d $(brew --prefix)/etc/bash_completion.d ]; then
   done
 fi
 
+alias vi=nvim
+alias vim=nvim
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
