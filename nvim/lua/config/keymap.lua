@@ -104,8 +104,6 @@ vim.keymap.set("n", "<leader>rn", function()
 end, { noremap = true, silent = true })
 
 
-
-
 -- Save file with Cmd+S in Normal and Insert Mode
 -- saves me from pressing cmd+s unconfigured that breaks the code
 vim.keymap.set("n", "<D-s>", ":w<CR>", { noremap = true, silent = true, desc = "Save file (Cmd+S)" })
