@@ -59,15 +59,19 @@ vim.keymap.set("n", "<leader>lb", telescope.buffers, { noremap = true, silent = 
 -- Find files in the current project
 vim.keymap.set("n", "<leader>lf", telescope.find_files, { noremap = true, silent = true, desc = "Find files" })
 
--- Go to LSP definition
-vim.keymap.set("n", "<leader>ld", telescope.lsp_definitions, { noremap = true, silent = true, desc = "Go to definition" })
 
 -- Grep inside project
 vim.keymap.set("n", "<leader>lg", telescope.live_grep, { noremap = true, silent = true, desc = "Live grep in project" })
 
 -- Search workspace symbols
-vim.keymap.set("n", "<leader>ws", telescope.lsp_dynamic_workspace_symbols,
+vim.keymap.set("n", "<leader>fs", telescope.lsp_dynamic_workspace_symbols,
   { noremap = true, silent = true, desc = "Search workspace symbols" })
+
+vim.keymap.set('n', '<leader>fr', telescope.lsp_references, { noremap = true, silent = true, desc = "Find References" })
+
+-- Go to LSP definition
+vim.keymap.set("n", "<leader>fd", telescope.lsp_definitions, { noremap = true, silent = true, desc = "Go to definition" })
+
 
 vim.keymap.set("n", "<leader>lq", telescope.quickfix, { noremap = true, silent = true, desc = "Quickfix list" })
 
@@ -102,6 +106,8 @@ end, { noremap = true, silent = true, desc = "Show code actions" })
 vim.keymap.set("n", "<leader>rn", function()
   vim.lsp.buf.rename()
 end, { noremap = true, silent = true })
+
+vim.keymap.set("n", "<leader>lo", ":Outline<CR>", { noremap = true, silent = true, desc = "Show outline" })
 
 
 -- Save file with Cmd+S in Normal and Insert Mode

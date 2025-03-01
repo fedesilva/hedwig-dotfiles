@@ -1,5 +1,3 @@
-
-
 -- Automatically format code on save
 vim.api.nvim_create_autocmd("BufWritePre", {
   --pattern = "*", -- Run for all files (you can specify filetypes)
@@ -9,10 +7,9 @@ vim.api.nvim_create_autocmd("BufWritePre", {
       local metals = require("metals")
       metals.organize_imports()
       metals.run_scalafix()
-
     end
     vim.lsp.buf.format({ async = false })
-     -- Explicitly write (save) the buffer after formatting
+    -- Explicitly write (save) the buffer after formatting
     vim.cmd("write")
   end,
 })
@@ -20,9 +17,9 @@ vim.api.nvim_create_autocmd("BufWritePre", {
 
 -- Automatically create directories before writing the file
 vim.api.nvim_create_autocmd("BufWritePre", {
-  pattern = "*", -- Apply to all files
+  pattern = "*",                                 -- Apply to all files
   callback = function()
-    local file = vim.fn.expand("<afile>") -- Get the full file path
+    local file = vim.fn.expand("<afile>")        -- Get the full file path
     local dir = vim.fn.fnamemodify(file, ":p:h") -- Extract directory
 
     -- If the directory does not exist, create it
@@ -31,4 +28,3 @@ vim.api.nvim_create_autocmd("BufWritePre", {
     end
   end,
 })
-
