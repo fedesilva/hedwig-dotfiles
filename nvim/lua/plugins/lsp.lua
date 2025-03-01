@@ -26,8 +26,9 @@ return {
       },
     })
 
-
     -- ✅ Python LSP (Choose ONE: Pyright or Jedi)
     lspconfig.pyright.setup({}) -- Recommended
+
+    lspconfig.marksman.setup {}
   end,
 }
