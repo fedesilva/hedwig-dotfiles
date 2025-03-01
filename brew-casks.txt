@@ -1,0 +1,13 @@
+adoptopenjdk
+aerospace
+barrier
+font-symbols-only-nerd-font
+ghostty
+insomnia
+keybase
+macvim
+pants
+rio
+vimr
+vlc
+wezterm
