@@ -1,4 +1,3 @@
-
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
   vim.fn.system({
@@ -9,8 +8,11 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
+-- --------------------------------------------
 -- Set leader key to ','
+--
 -- Needs to be set before loading plugins :shrug:
+-- --------------------------------------------
 vim.g.mapleader = ','
 
 require("lazy").setup("plugins")
