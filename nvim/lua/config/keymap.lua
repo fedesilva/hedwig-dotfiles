@@ -50,6 +50,8 @@ vim.api.nvim_set_keymap('n', '<leader>l0', ':set relativenumber!<CR>', { noremap
 vim.api.nvim_set_keymap('n', '<leader>l1', ':set number!<CR>', { noremap = true })
 vim.api.nvim_set_keymap('n', '<leader>l-', ':set nonumber<CR>', { noremap = true })
 
+vim.keymap.set("n", "]e", vim.diagnostic.goto_next, { desc = "Go to next diagnostic" })
+vim.keymap.set("n", "[e", vim.diagnostic.goto_prev, { desc = "Go to previous diagnostic" })
 
 local telescope = require("telescope.builtin")
 
@@ -58,6 +60,8 @@ vim.keymap.set("n", "<leader>lb", telescope.buffers, { noremap = true, silent = 
 
 -- Find files in the current project
 vim.keymap.set("n", "<leader>lf", telescope.find_files, { noremap = true, silent = true, desc = "Find files" })
+
+vim.keymap.set("n", "<leader>ld", telescope.diagnostics, { noremap = true, silent = true, desc = "Find files" })
 
 
 -- Grep inside project
@@ -81,6 +85,9 @@ vim.keymap.set("n", "<leader>lw", telescope.lsp_dynamic_workspace_symbols,
   { noremap = true, silent = true, desc = "LSP code actions" })
 
 vim.keymap.set("n", "<leader>lt", ":TodoTelescope<cr>", { noremap = true, silent = true, desc = "LSP code actions" })
+
+vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, { desc = 'Show diagnostic in a floating window' })
+
 
 vim.keymap.set("n", "<leader>f", function()
   if vim.bo.filetype == "scala" then
