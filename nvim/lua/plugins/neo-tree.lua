@@ -3,7 +3,7 @@ return {
   dependencies = { "nvim-lua/plenary.nvim", "nvim-tree/nvim-web-devicons", "MunifTanjim/nui.nvim" },
   config = function()
     require("neo-tree").setup({
-      close_if_last_window = true, -- Optional: Close Neotree if it's the last window
+      close_if_last_window = false, -- Optional: Close Neotree if it's the last window
       filesystem = {
         follow_current_file = {
           enabled = true, -- Auto-update Neotree when switching buffers
