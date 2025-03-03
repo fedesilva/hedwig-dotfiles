@@ -30,5 +30,7 @@ return {
     lspconfig.pyright.setup({}) -- Recommended
 
     lspconfig.marksman.setup {}
+
+    require 'lspconfig'.buf_ls.setup {}
   end,
 }
