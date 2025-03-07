@@ -4,31 +4,45 @@ return {
   config = function()
     require("telescope").setup({
       defaults = {
+        layout_strategy = "vertical",
         layout_config = {
           prompt_position = "top",
+          mirror = true, -- Ensures results appear above
         },
         sorting_strategy = "ascending",
-        path_display = function(opts, path)
+        path_display = function(_, path)
           -- Replace HOME with ~
-          path = path:gsub(vim.fn.expand("$HOME"), "~")
+          local home = vim.fn.expand("$HOME")
+          path = path:gsub(home, "~")
 
-          -- Keep only the last 2 directories + filename
-          local max_segments = 2
-          local parts = {}
-          for segment in path:gmatch("[^/]+") do
-            table.insert(parts, segment)
-          end
+          -- Extract filename
+          local filename = path:match("[^/]+$")
 
-          if #parts > max_segments then
-            path = "…/" .. table.concat(parts, "/", #parts - max_segments + 1)
-          end
-
-          return path
+          -- Ensure full path is displayed, with filename first
+          return string.format("%s — %s", filename, path)
         end,
       },
       pickers = {
+        find_files = {
+          layout_strategy = "vertical",
+          layout_config = {
+            prompt_position = "top",
+            mirror = true,
+          },
+        },
         lsp_dynamic_workspace_symbols = {
-          theme = "dropdown",
+          layout_strategy = "vertical",
+          layout_config = {
+            prompt_position = "top",
+            mirror = true,
+          },
+        },
+        live_grep = {
+          layout_strategy = "vertical",
+          layout_config = {
+            prompt_position = "top",
+            mirror = true,
+          },
         },
       },
     })

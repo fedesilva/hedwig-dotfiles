@@ -11,26 +11,52 @@ return {
       settings = {
         Lua = {
           runtime = {
-            version = "LuaJIT", -- Neovim uses LuaJIT
+            version = "LuaJIT",
           },
           diagnostics = {
-            -- Fixes "undefined global vim"
-            globals = { "vim" }, -- Tell the LSP that "vim" is a global variable
+            globals = { "vim" },
           },
           workspace = {
-            library = vim.api.nvim_get_runtime_file("", true), -- Recognize Neovim runtime files
-            checkThirdParty = false,                           -- Prevent warning about 3rd-party plugins
+            library = vim.api.nvim_get_runtime_file("", true),
+            checkThirdParty = false,
           },
-          telemetry = { enable = false },                      -- Disable telemetry
+          telemetry = { enable = false },
         },
       },
     })
 
-    -- ✅ Python LSP (Choose ONE: Pyright or Jedi)
-    lspconfig.pyright.setup({}) -- Recommended
+    -- ✅ Pyright (Only for Type Checking, No Linting)
+    lspconfig.pyright.setup({
+      settings = {
+        python = {
+          analysis = {
+            ignore = { '*' },            -- Using Ruff
+            typeCheckingMode = "strict", -- Enables full type checking
+            useLibraryCodeForTypes = true,
+            autoImportCompletions = true,
+          },
+        },
+      },
+    })
 
-    lspconfig.marksman.setup {}
+    -- ✅ Ruff (Only for Linting & Formatting)
+    lspconfig.ruff.setup {
+      init_options = {
+        settings = {
+          lint = {
+            enable = false
+          }
+        }
+      }
+    }
 
-    require 'lspconfig'.buf_ls.setup {}
+    -- Autoformat Python files with Ruff on save
+    vim.api.nvim_create_autocmd("BufWritePre", {
+      pattern = "*.py",
+      callback = function()
+        vim.lsp.buf.format({ async = false })
+      end,
+    })
   end,
 }
+

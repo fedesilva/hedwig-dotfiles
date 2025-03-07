@@ -92,12 +92,22 @@ vim.keymap.set("n", "<leader>lt", ":TodoTelescope<cr>", { noremap = true, silent
 vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, { desc = 'Show diagnostic in a floating window' })
 
 
+-- LSP mappings
+
+
+-- format
 vim.keymap.set("n", "<leader>f", function()
   if vim.bo.filetype == "scala" then
     require("metals").organize_imports()
   end
   vim.lsp.buf.format({ async = true })
 end, { noremap = true, silent = true, desc = "Format code using LSP" })
+
+-- Refactor: Rename
+vim.keymap.set("n", "<leader>rn", function()
+  vim.lsp.buf.rename()
+end, { noremap = true, silent = true })
+
 
 -- Trigger LSP signature help in Insert Mode with <C-s>
 vim.keymap.set("i", "<C-S>", function()
@@ -113,11 +123,6 @@ vim.keymap.set("n", "<leader>la", function()
   vim.lsp.buf.code_action()
 end, { noremap = true, silent = true, desc = "Show code actions" })
 
-vim.keymap.set("n", "<leader>rn", function()
-  vim.lsp.buf.rename()
-end, { noremap = true, silent = true })
-
-vim.keymap.set("n", "<leader>lo", ":Outline<CR>", { noremap = true, silent = true, desc = "Show outline" })
 
 
 -- Save file with Cmd+S in Normal and Insert Mode
