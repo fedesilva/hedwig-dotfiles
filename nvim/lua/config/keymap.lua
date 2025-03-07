@@ -11,21 +11,24 @@ vim.api.nvim_set_keymap('n', '<leader>nb', ':Neotree buffers<CR>', { noremap = t
 vim.api.nvim_set_keymap('n', '<leader>m', ':Neotree close<CR>', { noremap = true })
 
 
--- No highlight search mapping
+-- Turns off search highlighting
 vim.api.nvim_set_keymap('n', '<Leader>/', ':nohlsearch<CR>', { noremap = true })
 
 -- Toggle wrapping
 vim.api.nvim_set_keymap('n', '<Leader>w', ':set wrap! wrap?<CR>', { noremap = true })
 
 -- Copilot
--- Keymap to accept GitHub Copilot suggestion
+-- accept GitHub Copilot suggestion
 vim.api.nvim_set_keymap("i", "<C-j>", 'copilot#Accept("<C-K>")', { silent = true, expr = true })
+-- accept next workd from Copilot Suggestion
 vim.api.nvim_set_keymap("i", "<C-k>", 'copilot#AcceptWord()', { silent = true, expr = true })
+-- accept line from Copilot Suggestion
 vim.api.nvim_set_keymap("i", "<C-l>", 'copilot#AcceptLine()', { silent = true, expr = true })
 
 vim.g.copilot_no_tab_map = true -- Prevent Copilot from hijacking <Tab>
 
-
+-- Lazy
+vim.api.nvim_set_keymap("n", "<leader>L", ":Lazy<CR>", { noremap = true, silent = true })
 
 -- Buffer management mappings
 vim.api.nvim_set_keymap('n', '<leader>x', ':bd<CR>', { noremap = true })
@@ -133,3 +136,12 @@ vim.keymap.set("n", "<leader>gb", ":Gblame<CR>", { noremap = true, silent = true
 vim.keymap.set("n", "<leader>gd", ":Gdiffsplit<CR>", { noremap = true, silent = true, desc = "Git diff" })
 vim.keymap.set("n", "<leader>gr", ":Gread<CR>", { noremap = true, silent = true, desc = "Reset file to last commit" })
 vim.keymap.set("n", "<leader>gw", ":Gwrite<CR>", { noremap = true, silent = true, desc = "Stage current file" })
+
+
+-- Gitlink
+vim.api.nvim_set_keymap(
+  "n",
+  "<leader>gy",
+  ":lua require('gitlinker').get_buf_range_url('n')<CR>",
+  { silent = true, noremap = true }
+)
