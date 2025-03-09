@@ -23,6 +23,13 @@ return {
         "php",
         "proto",
         "php",
+        "regex",
+        "rust",
+        "bash",
+        "zig",
+        "c",
+        "cpp",
+        "markdown_inline"
       },
       auto_install = true,
       highlight = { enable = true },

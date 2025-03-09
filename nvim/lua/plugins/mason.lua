@@ -10,7 +10,6 @@ return {
     require("mason-lspconfig").setup({
       ensure_installed = {
         "pyright",       -- Python type checker + LSP features
-        --        "jedi_language_server",     -- Alternative LSP, better autocompletion
         "lua_ls",        -- For Lua development (Neovim config)
         "ts_ls",         -- TypeScript/JavaScript LSP
         "clangd",        -- C/C++ LSP

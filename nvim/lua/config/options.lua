@@ -20,19 +20,19 @@ vim.opt.expandtab = true
 
 vim.opt.hidden = true
 
-vim.opt.wildmenu = true  -- Enhanced command line completion.
-vim.opt.wildmode = 'list:longest'  -- Complete files like a shell.
+vim.opt.wildmenu = true           -- Enhanced command line completion.
+vim.opt.wildmode = 'list:longest' -- Complete files like a shell.
 
-vim.opt.ignorecase = true  -- Case-insensitive searching.
-vim.opt.smartcase = true  -- But case-sensitive if expression contains a capital letter.
+vim.opt.ignorecase = true         -- Case-insensitive searching.
+vim.opt.smartcase = true          -- But case-sensitive if expression contains a capital letter.
 
-vim.opt.autoindent = true  -- Always set autoindenting on 
+vim.opt.autoindent = true         -- Always set autoindenting on
 -- vim.opt.copyindent = true  -- Copy the previous indentation on autoindenting (commented out)
 
-vim.opt.number = true  -- Show line numbers.
+vim.opt.number = true     -- Show line numbers.
 
-vim.opt.ruler = true  -- Show the ruler.
-vim.opt.cursorline = true  -- Highlight the current line.
+vim.opt.ruler = true      -- Show the ruler.
+vim.opt.cursorline = true -- Highlight the current line.
 
 -- 📌 This sets:
 -- A white cursor in normal mode
@@ -48,13 +48,13 @@ vim.opt.mousehide = true
 
 
 vim.opt.incsearch = true  -- Incremental search, highlight matches as you type.
-vim.opt.hlsearch = true  -- Highlight matches.
+vim.opt.hlsearch = true   -- Highlight matches.
 
-vim.opt.scrolloff = 0  -- Show X lines of context around the cursor.
+vim.opt.scrolloff = 0     -- Show X lines of context around the cursor.
 
-vim.opt.title = true  -- Set the terminal's title.
+vim.opt.title = true      -- Set the terminal's title.
 
-vim.opt.visualbell = true  -- No beeping.
+vim.opt.visualbell = true -- No beeping.
 
 -- Set the number of commands and searches to remember
 vim.opt.history = 1000
@@ -81,7 +81,8 @@ vim.opt.expandtab = true
 vim.opt.laststatus = 2
 
 -- Set the format of the status line
-vim.opt.statusline = '[%n] %<%.99f %h%w%m%r%y %{exists(\'*CapsLockStatusline\')?CapsLockStatusline():\'\'}%=%-16( %l,%c-%v %)%P'
+vim.opt.statusline =
+'[%n] %<%.99f %h%w%m%r%y %{exists(\'*CapsLockStatusline\')?CapsLockStatusline():\'\'}%=%-16( %l,%c-%v %)%P'
 
 -- Do not wrap lines
 vim.opt.wrap = false
@@ -90,12 +91,11 @@ vim.opt.wrap = false
 vim.opt.linebreak = true
 
 -- Folding settings based on indent levels
-vim.opt.foldmethod = 'indent'   -- Fold based on indent
-vim.opt.foldnestmax = 10        -- Deepest fold is 10 levels
-vim.opt.foldenable = false      -- Don't fold by default
-vim.opt.foldlevel = 1           -- This sets the initial fold level
+vim.opt.foldmethod = 'indent' -- Fold based on indent
+vim.opt.foldnestmax = 10      -- Deepest fold is 10 levels
+vim.opt.foldenable = false    -- Don't fold by default
+vim.opt.foldlevel = 1         -- This sets the initial fold level
 
 vim.diagnostic.setqflist()
-vim.diagnostic.setqflist({severity = vim.diagnostic.severity.ERROR})
-vim.diagnostic.setqflist({severity = vim.diagnostic.severity.WARN})
-
+vim.diagnostic.setqflist({ severity = vim.diagnostic.severity.ERROR })
+vim.diagnostic.setqflist({ severity = vim.diagnostic.severity.WARN })

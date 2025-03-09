@@ -30,9 +30,14 @@ vim.g.copilot_no_tab_map = true -- Prevent Copilot from hijacking <Tab>
 -- Lazy
 vim.api.nvim_set_keymap("n", "<leader>L", ":Lazy<CR>", { noremap = true, silent = true })
 
+vim.api.nvim_set_keymap("n", "<Esc>", "<cmd>Noice dismiss<CR>", { noremap = true, silent = true })
+
+
 -- Buffer management mappings
-vim.api.nvim_set_keymap('n', '<leader>x', ':bd<CR>', { noremap = true })
-vim.api.nvim_set_keymap('n', '<leader>b', ':b ', { noremap = true })
+vim.keymap.set('n', '<leader>bd', function()
+  Snacks.bufdelete()
+end, { noremap = true, silent = true, desc = "Close buffer" })
+
 vim.api.nvim_set_keymap('n', '<leader>q', ':qall', { noremap = true })
 vim.api.nvim_set_keymap('n', '<leader>Q', ':qall<CR>', { noremap = true })
 
@@ -41,7 +46,6 @@ vim.api.nvim_set_keymap('n', '<c-j>', ':bprev!<CR>', { noremap = true })
 vim.api.nvim_set_keymap('n', '<c-k>', ':bnext!<CR>', { noremap = true })
 vim.api.nvim_set_keymap('n', '<c-a>', ':b# <CR>', { noremap = true })
 vim.api.nvim_set_keymap('n', '<leader>a', ':b# <CR>', { noremap = true })
-vim.api.nvim_set_keymap('n', '<leader>x', ':bd <CR>', { noremap = true })
 
 
 -- Mappings to reload configuration files
