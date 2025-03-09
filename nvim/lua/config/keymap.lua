@@ -30,7 +30,18 @@ vim.g.copilot_no_tab_map = true -- Prevent Copilot from hijacking <Tab>
 -- Lazy
 vim.api.nvim_set_keymap("n", "<leader>L", ":Lazy<CR>", { noremap = true, silent = true })
 
+-- Noice: dismiss annoying notifications
 vim.api.nvim_set_keymap("n", "<Esc>", "<cmd>Noice dismiss<CR>", { noremap = true, silent = true })
+
+
+-- Snacks.scratch
+vim.keymap.set('n', '<leader>s', function()
+  Snacks.scratch()
+end, { noremap = true })
+
+vim.keymap.set('n', '<leader>S', function()
+  Snacks.scratch.select()
+end, { noremap = true })
 
 
 -- Buffer management mappings
@@ -118,8 +129,7 @@ vim.keymap.set("i", "<C-S>", function()
   vim.lsp.buf.signature_help()
 end, { noremap = true, silent = true, desc = "Show function signature help" })
 
--- Optional: Trigger signature help in Normal Mode with K
-vim.keymap.set("n", "<leader>ls", function()
+vim.keymap.set("n", "<C-S>", function()
   vim.lsp.buf.signature_help()
 end, { noremap = true, silent = true, desc = "Show function signature help" })
 

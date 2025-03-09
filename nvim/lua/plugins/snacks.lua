@@ -19,6 +19,8 @@ return {
     scroll = { enabled = true },
     statuscolumn = { enabled = true },
     words = { enabled = true },
+    scratch = { enabled = true },
+    layout = { enabled = true },
   },
   config = function()
     Snacks.words.enable()
