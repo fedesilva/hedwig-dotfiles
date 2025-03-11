@@ -1,5 +1,0 @@
-
-if [ -f $HOME/.dotfiles/bash/init  ]; then
-     . $HOME/.dotfiles/bash/init
-fi
-
