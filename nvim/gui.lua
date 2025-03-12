@@ -1,1 +1,1 @@
-vim.o.guifont = "Monaspace Argon, MonaspiceNe Nerd Font"
+vim.o.guifont = "Monaspace Argon, MonaspiceAr Nerd Font"

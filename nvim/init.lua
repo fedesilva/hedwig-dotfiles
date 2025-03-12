@@ -8,6 +8,11 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
+if vim.g.gui_vimr ~= nil then
+  -- Here goes some VimR specific settings
+  vim.o.guifont = "MonaspiceAr Nerd Font:h16"
+end
+
 -- --------------------------------------------
 -- Set leader key to ','
 --

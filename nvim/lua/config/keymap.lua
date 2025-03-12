@@ -113,7 +113,8 @@ vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, { desc = 'Show diagn
 -- format
 vim.keymap.set("n", "<leader>f", function()
   if vim.bo.filetype == "scala" then
-    require("metals").organize_imports()
+    local metals = require("metals")
+    metals.organize_imports()
   end
   vim.lsp.buf.format({ async = true })
 end, { noremap = true, silent = true, desc = "Format code using LSP" })
