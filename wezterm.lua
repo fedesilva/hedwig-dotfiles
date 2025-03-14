@@ -15,8 +15,9 @@ config.font_size = 14
 -- config.color_scheme = 'Mariana'
 config.color_scheme = 'JetBrains Darcula'
 
-
-
+-- write a function to calculate the size of the tabs, such thats
+-- the first tab takes all the space, if there are two, they split
+-- and if there are three, they split again and so on
 
 
 return config
