@@ -30,7 +30,7 @@ return {
       settings = {
         python = {
           analysis = {
-            ignore = { '*' },            -- Using Ruff
+            -- ignore = { '*' },            -- Using Ruff
             typeCheckingMode = "strict", -- Enables full type checking
             useLibraryCodeForTypes = true,
             autoImportCompletions = true,
@@ -49,5 +49,12 @@ return {
         }
       }
     }
+
+    lspconfig.buf_ls.setup {}
+    lspconfig.clangd.setup {}
+    lspconfig.rust_analyzer.setup {}
+    lspconfig.gopls.setup {}
+    lspconfig.bzl.setup {}
+    lspconfig.zls.setup {}
   end,
 }

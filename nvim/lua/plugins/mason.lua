@@ -17,6 +17,9 @@ return {
         "gopls",         -- Go LSP
         "ruff",
         "marksman",
+        "buf_ls",
+        "bzl",
+        "zls",
       },
       automatic_installation = true, -- Automatically install missing LSPs
     })
