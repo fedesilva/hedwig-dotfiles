@@ -1,7 +1,7 @@
 return {
   "frankroeder/parrot.nvim",
   dependencies = { 'ibhagwan/fzf-lua', 'nvim-lua/plenary.nvim' },
-  enabled = false, -- load on an as-needed basis
+  enabled = true, -- load on an as-needed basis
   -- optionally include "folke/noice.nvim" or "rcarriga/nvim-notify" for beautiful notifications
   config = function()
     require("parrot").setup {
