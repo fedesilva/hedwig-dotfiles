@@ -31,7 +31,9 @@ vim.g.copilot_no_tab_map = true -- Prevent Copilot from hijacking <Tab>
 vim.api.nvim_set_keymap("n", "<leader>L", ":Lazy<CR>", { noremap = true, silent = true })
 
 -- Noice: dismiss annoying notifications
-vim.api.nvim_set_keymap("n", "<Esc>", "<cmd>Noice dismiss<CR>", { noremap = true, silent = true })
+vim.keymap.set("n", "<Esc>", function()
+  require("notify").dismiss()
+end, { noremap = true, silent = true })
 
 
 -- Snacks.scratch
