@@ -26,8 +26,6 @@ alias vim=nvim
 alias mvim=vimr
 
 
-alias tar=gnutar
-
 #
 #  GIT aliases
 #
@@ -37,8 +35,9 @@ alias gadd="git add"
 alias gd="git diff"
 alias gci="git commit -v"
 alias gca="git commit -av"
-alias gcl="git log --grap"
+alias gcl="git log --graph"
 alias gl="git lola"
+alias gla="git lola"
 alias grs="git remote show"
 
 alias gw="git whatchanged"
