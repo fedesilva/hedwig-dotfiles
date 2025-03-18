@@ -13,7 +13,7 @@ return {
         "ruff",          -- Anotheer Python LSP
         "lua_ls",        -- For Lua development (Neovim config)
         "ts_ls",         -- TypeScript/JavaScript LSP
-        "clangd",        -- C/C++ LSP
+        -- "clangd",        -- C/C++ LSP
         "rust_analyzer", -- Rust LSP
         "gopls",         -- Go LSP
         "marksman",
