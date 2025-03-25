@@ -110,8 +110,6 @@ vim.keymap.set("n", "<leader>lq", telescope.quickfix, { noremap = true, silent =
 
 vim.keymap.set("n", "<leader>lr", telescope.lsp_references, { noremap = true, silent = true, desc = "LSP references" })
 
-vim.keymap.set("n", "<leader>lw", telescope.lsp_dynamic_workspace_symbols,
-  { noremap = true, silent = true, desc = "LSP code actions" })
 
 vim.keymap.set("n", "<leader>t", ":TodoTelescope<cr>", { noremap = true, silent = true, desc = "LSP code actions" })
 
