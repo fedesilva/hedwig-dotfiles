@@ -78,6 +78,13 @@ local telescope = require("telescope.builtin")
 -- Open buffers list
 vim.keymap.set("n", "<leader>lb", telescope.buffers, { noremap = true, silent = true, desc = "List open buffers" })
 
+vim.api.nvim_set_keymap("n", "<leader>li", ":Telescope lsp_incoming_calls<CR>",
+  { noremap = true, silent = true, desc = "List open buffers" })
+
+vim.api.nvim_set_keymap("n", "<leader>lo", ":Telescope lsp_outgoing_calls<CR>",
+  { noremap = true, silent = true, desc = "List open buffers" })
+
+
 -- Find files in the current project
 vim.keymap.set("n", "<leader>lf", telescope.find_files, { noremap = true, silent = true, desc = "Find files" })
 
@@ -91,10 +98,9 @@ vim.keymap.set("n", "<leader>lg", telescope.live_grep, { noremap = true, silent 
 vim.keymap.set("n", "<leader>ft", telescope.tags, { noremap = true, silent = true, desc = "Search tags" })
 
 -- Search workspace symbols
-vim.keymap.set("n", "<leader>fs", telescope.lsp_dynamic_workspace_symbols,
+vim.keymap.set("n", "<leader>ls", telescope.lsp_dynamic_workspace_symbols,
   { noremap = true, silent = true, desc = "Search workspace symbols" })
 
-vim.keymap.set('n', '<leader>fr', telescope.lsp_references, { noremap = true, silent = true, desc = "Find References" })
 
 -- Go to LSP definition
 vim.keymap.set("n", "<leader>fd", telescope.lsp_definitions, { noremap = true, silent = true, desc = "Go to definition" })
@@ -107,7 +113,7 @@ vim.keymap.set("n", "<leader>lr", telescope.lsp_references, { noremap = true, si
 vim.keymap.set("n", "<leader>lw", telescope.lsp_dynamic_workspace_symbols,
   { noremap = true, silent = true, desc = "LSP code actions" })
 
-vim.keymap.set("n", "<leader>lt", ":TodoTelescope<cr>", { noremap = true, silent = true, desc = "LSP code actions" })
+vim.keymap.set("n", "<leader>t", ":TodoTelescope<cr>", { noremap = true, silent = true, desc = "LSP code actions" })
 
 vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, { desc = 'Show diagnostic in a floating window' })
 
