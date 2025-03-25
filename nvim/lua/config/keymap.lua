@@ -101,9 +101,10 @@ vim.keymap.set("n", "<leader>ft", telescope.tags, { noremap = true, silent = tru
 vim.keymap.set("n", "<leader>ls", telescope.lsp_dynamic_workspace_symbols,
   { noremap = true, silent = true, desc = "Search workspace symbols" })
 
+vim.keymap.set('n', '<leader>lr', telescope.lsp_references, { noremap = true, silent = true, desc = "Find References" })
 
 -- Go to LSP definition
-vim.keymap.set("n", "<leader>fd", telescope.lsp_definitions, { noremap = true, silent = true, desc = "Go to definition" })
+vim.keymap.set("n", "<leader>ld", telescope.lsp_definitions, { noremap = true, silent = true, desc = "Go to definition" })
 
 
 vim.keymap.set("n", "<leader>lq", telescope.quickfix, { noremap = true, silent = true, desc = "Quickfix list" })
