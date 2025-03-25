@@ -87,6 +87,9 @@ vim.keymap.set("n", "<leader>ld", telescope.diagnostics, { noremap = true, silen
 -- Grep inside project
 vim.keymap.set("n", "<leader>lg", telescope.live_grep, { noremap = true, silent = true, desc = "Live grep in project" })
 
+-- search tags
+vim.keymap.set("n", "<leader>ft", telescope.tags, { noremap = true, silent = true, desc = "Search tags" })
+
 -- Search workspace symbols
 vim.keymap.set("n", "<leader>fs", telescope.lsp_dynamic_workspace_symbols,
   { noremap = true, silent = true, desc = "Search workspace symbols" })

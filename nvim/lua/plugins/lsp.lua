@@ -50,8 +50,8 @@ return {
       }
     }
 
-    lspconfig.buf_ls.setup {}
-    lspconfig.clangd.setup {}
+    -- lspconfig.buf_ls.setup {}
+    -- lspconfig.clangd.setup {}
     lspconfig.rust_analyzer.setup {}
     lspconfig.gopls.setup {}
     lspconfig.bzl.setup {}
