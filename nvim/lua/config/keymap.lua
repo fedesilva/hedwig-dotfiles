@@ -1,5 +1,6 @@
 -- Save one key stroke by remapping semicolon to colon
 vim.api.nvim_set_keymap('n', ';', ':', { noremap = true })
+vim.api.nvim_set_keymap('v', ';', ':', { noremap = true })
 
 -- When wrapping, do not jump to next line
 vim.api.nvim_set_keymap('n', 'j', 'gj', { noremap = true })
@@ -30,7 +31,7 @@ vim.g.copilot_no_tab_map = true -- Prevent Copilot from hijacking <Tab>
 -- Lazy
 vim.api.nvim_set_keymap("n", "<leader>L", ":Lazy<CR>", { noremap = true, silent = true })
 
--- Noice: dismiss annoying notifications
+-- Dismiss annoying notifications
 vim.keymap.set("n", "<Esc>", function()
   require("notify").dismiss()
 end, { noremap = true, silent = true })
