@@ -79,10 +79,10 @@ local telescope = require("telescope.builtin")
 vim.keymap.set("n", "<leader>lb", telescope.buffers, { noremap = true, silent = true, desc = "List open buffers" })
 
 vim.api.nvim_set_keymap("n", "<leader>li", ":Telescope lsp_incoming_calls<CR>",
-  { noremap = true, silent = true, desc = "List open buffers" })
+  { noremap = true, silent = true, desc = "List incoming references" })
 
 vim.api.nvim_set_keymap("n", "<leader>lo", ":Telescope lsp_outgoing_calls<CR>",
-  { noremap = true, silent = true, desc = "List open buffers" })
+  { noremap = true, silent = true, desc = "List outgoing references" })
 
 
 -- Find files in the current project
@@ -122,15 +122,15 @@ vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, { desc = 'Show diagn
 
 -- format
 vim.keymap.set("n", "<leader>f", function()
-  if vim.bo.filetype == "scala" then
+  if vim.bo.filetype == "scala" or vim.bo.filetype == "sbt" then
     local metals = require("metals")
     metals.organize_imports()
   end
   vim.lsp.buf.format({ async = true })
 end, { noremap = true, silent = true, desc = "Format code using LSP" })
 
--- Refactor: Rename
-vim.keymap.set("n", "<leader>rn", function()
+-- Refactor: Rename (lsp refactor name
+vim.keymap.set("n", "<leader>lrn", function()
   vim.lsp.buf.rename()
 end, { noremap = true, silent = true })
 

@@ -3,7 +3,7 @@ vim.api.nvim_create_autocmd("BufWritePre", {
   --pattern = "*", -- Run for all files (you can specify filetypes)
   pattern = { "*.lua", "*.py", "*.proto", "*.scala" }, -- Add more extensions if needed
   callback = function()
-    if vim.bo.filetype == "scala" then
+    if vim.bo.filetype == "scala" or vim.bo.filetype == "sbt" then
       local metals = require("metals")
       metals.organize_imports()
       metals.run_scalafix()
