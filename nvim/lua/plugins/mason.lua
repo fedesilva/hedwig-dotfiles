@@ -17,7 +17,6 @@ return {
         "rust_analyzer", -- Rust LSP
         "gopls",         -- Go LSP
         "marksman",
-        -- "buf_ls",
         "bzl",
         "zls",
       },
