@@ -14,7 +14,6 @@ fi
 # -------------------------------
 # Mac-specific configuration below
 # -------------------------------
-
 # Homebrew Config based on Mac architecture
 if [[ "$(uname -m)" == "arm64" ]]; then
   export HOMEBREW_PREFIX="/opt/homebrew"
@@ -26,6 +25,11 @@ fi
 export PATH="$HOME/bin:$HOME/.local/bin:$HOMEBREW_PREFIX/opt/llvm/bin:$HOMEBREW_PREFIX/bin:$PATH"
 export PATH="$HOME/.npm-global/bin:$PATH"
 export PATH="$HOME/Library/Application Support/Coursier/bin:$PATH"
+export PATH="$(brew --prefix)/opt/util-linux/sbin:${PATH}"
+export PATH="$(brew --prefix)/opt/util-linux/bin:${PATH}"
+
+
+
 
 # Add Homebrew Zsh completions to fpath
 fpath=("$HOMEBREW_PREFIX/share/zsh/site-functions" $fpath)
@@ -78,6 +82,15 @@ fi
 
 # Source sensitive keys if available
 [[ -f "$HOME/.config/keys" ]] && source "$HOME/.config/keys"
+
+# Source local specific stuff
+# Source local-specific stuff
+if [[ -f "$HOME/.config/source.list" ]]; then
+    while read -r file; do
+        echo "sourcing $file"
+        source "$file"
+    done < "$HOME/.config/source.list"
+fi
 
 # Source custom aliases if available
 [[ -f "$ZSH_CUSTOM/aliases.zsh" ]] && source "$ZSH_CUSTOM/aliases.zsh"
