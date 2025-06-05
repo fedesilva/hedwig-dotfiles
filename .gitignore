@@ -8,3 +8,4 @@ vim/.netrwhist
 *.log
 vim/ruby/command-t/Makefile$
 doc/tags
+.DS_Store
