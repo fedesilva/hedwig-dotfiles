@@ -1,5 +1,6 @@
 return {
   "github/copilot.vim",
+  enabled = false,
   event = "InsertEnter",
   config = function()
     vim.g.copilot_no_tab_map = true    -- Disable default <Tab> mappin
