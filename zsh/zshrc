@@ -79,6 +79,8 @@ else
     export EDITOR='nvim'
 fi
 
+export PATH=~/.cargo/bin:$PATH
+
 # Source custom aliases if available
 [[ -f "$ZSH_CUSTOM/aliases.zsh" ]] && source "$ZSH_CUSTOM/aliases.zsh"
 

@@ -1,2 +1,4 @@
 tags
 **/.metals
+**/.DS_Store
+.claude

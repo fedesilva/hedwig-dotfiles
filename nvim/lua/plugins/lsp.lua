@@ -52,7 +52,22 @@ return {
 
     -- lspconfig.buf_ls.setup {}
     -- lspconfig.clangd.setup {}
-    lspconfig.rust_analyzer.setup {}
+
+    -- Rust
+    lspconfig.rust_analyzer.setup({
+      settings = {
+        ["rust-analyzer"] = {
+          cargo = {
+            allFeatures = true,
+          },
+          checkOnSave = true,
+          procMacro = {
+            enable = true,
+          },
+        },
+      },
+    })
+
     lspconfig.gopls.setup {}
     lspconfig.bzl.setup {}
     lspconfig.zls.setup {}
