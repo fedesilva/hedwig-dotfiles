@@ -96,6 +96,9 @@ fi
 # Source sensitive keys if available
 [[ -f "$HOME/.config/keys" ]] && source "$HOME/.config/keys"
 
+# Source machine specific aliases
+[[ -f "$HOME/.config/aliases" ]] && source "$HOME/.config/aliases"
+
 # Source local-specific stuff
 if [[ -f "$HOME/.config/source.list" ]]; then
     while read -r file; do
@@ -110,3 +113,4 @@ fpath=(/Users/fede.silva/.docker/completions $fpath)
 autoload -Uz compinit
 compinit
 # End of Docker CLI completions
+export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
