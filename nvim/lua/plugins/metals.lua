@@ -15,6 +15,7 @@ return {
         inferredTypes = { enable = true },
         implicitArguments = { enable = true },
       },
+      startMcpServer = true,
     }
 
     metals_config.init_options.statusBarProvider = "on"
@@ -30,4 +31,3 @@ return {
     })
   end,
 }
-
