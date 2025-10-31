@@ -1,21 +1,16 @@
 return {
   "neovim/nvim-lspconfig",
+  version = false, -- use latest
   config = function()
-    local lspconfig = require("lspconfig")
-
     -- TypeScript / JavaScript
-    lspconfig.ts_ls.setup({})
+    vim.lsp.config("ts_ls", {})
 
     -- Lua
-    lspconfig.lua_ls.setup({
+    vim.lsp.config("lua_ls", {
       settings = {
         Lua = {
-          runtime = {
-            version = "LuaJIT",
-          },
-          diagnostics = {
-            globals = { "vim" },
-          },
+          runtime = { version = "LuaJIT" },
+          diagnostics = { globals = { "vim" } },
           workspace = {
             library = vim.api.nvim_get_runtime_file("", true),
             checkThirdParty = false,
@@ -25,13 +20,12 @@ return {
       },
     })
 
-    -- ✅ Pyright (Only for Type Checking, No Linting)
-    lspconfig.pyright.setup({
+    -- Pyright (type checking only)
+    vim.lsp.config("pyright", {
       settings = {
         python = {
           analysis = {
-            -- ignore = { '*' },            -- Using Ruff
-            typeCheckingMode = "strict", -- Enables full type checking
+            typeCheckingMode = "strict",
             useLibraryCodeForTypes = true,
             autoImportCompletions = true,
           },
@@ -39,37 +33,43 @@ return {
       },
     })
 
-    -- ✅ Ruff (Only for Linting & Formatting)
-    lspconfig.ruff.setup {
+    -- Ruff (lint/format only; lint disabled here)
+    vim.lsp.config("ruff", {
       init_options = {
         settings = {
-          lint = {
-            enable = false
-          }
-        }
-      }
-    }
-
-    -- lspconfig.buf_ls.setup {}
-    -- lspconfig.clangd.setup {}
-
-    -- Rust
-    lspconfig.rust_analyzer.setup({
-      settings = {
-        ["rust-analyzer"] = {
-          cargo = {
-            allFeatures = true,
-          },
-          checkOnSave = true,
-          procMacro = {
-            enable = true,
-          },
+          lint = { enable = false },
         },
       },
     })
 
-    lspconfig.gopls.setup {}
-    lspconfig.bzl.setup {}
-    lspconfig.zls.setup {}
+    -- Rust
+    vim.lsp.config("rust_analyzer", {
+      settings = {
+        ["rust-analyzer"] = {
+          cargo = { allFeatures = true },
+          checkOnSave = true,
+          procMacro = { enable = true },
+        },
+      },
+    })
+
+    -- Go
+    vim.lsp.config("gopls", {})
+
+    -- Bazel/Starlark
+    vim.lsp.config("bzl", {})
+
+    -- Zig
+    vim.lsp.config("zls", {})
+
+    -- Enable filetype-based activation for all of the above
+    vim.lsp.enable("ts_ls")
+    vim.lsp.enable("lua_ls")
+    vim.lsp.enable("pyright")
+    vim.lsp.enable("ruff")
+    vim.lsp.enable("rust_analyzer")
+    vim.lsp.enable("gopls")
+    vim.lsp.enable("bzl")
+    vim.lsp.enable("zls")
   end,
 }
