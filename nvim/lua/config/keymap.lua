@@ -110,9 +110,6 @@ vim.keymap.set("n", "<leader>ld", telescope.lsp_definitions, { noremap = true, s
 
 vim.keymap.set("n", "<leader>lq", telescope.quickfix, { noremap = true, silent = true, desc = "Quickfix list" })
 
-vim.keymap.set("n", "<leader>lr", telescope.lsp_references, { noremap = true, silent = true, desc = "LSP references" })
-
-
 vim.keymap.set("n", "<leader>t", ":TodoTelescope<cr>", { noremap = true, silent = true, desc = "LSP code actions" })
 
 vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, { desc = 'Show diagnostic in a floating window' })
@@ -130,7 +127,7 @@ vim.keymap.set("n", "<leader>f", function()
   vim.lsp.buf.format({ async = true })
 end, { noremap = true, silent = true, desc = "Format code using LSP" })
 
--- Refactor: Rename (lsp refactor name
+-- Refactor: Rename (lsp refactor name)
 vim.keymap.set("n", "<leader>lrn", function()
   vim.lsp.buf.rename()
 end, { noremap = true, silent = true })
@@ -138,10 +135,6 @@ end, { noremap = true, silent = true })
 
 -- Trigger LSP signature help in Insert Mode with <C-s>
 vim.keymap.set("i", "<C-S>", function()
-  vim.lsp.buf.signature_help()
-end, { noremap = true, silent = true, desc = "Show function signature help" })
-
-vim.keymap.set("n", "<C-S>", function()
   vim.lsp.buf.signature_help()
 end, { noremap = true, silent = true, desc = "Show function signature help" })
 
