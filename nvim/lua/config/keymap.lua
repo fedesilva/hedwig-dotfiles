@@ -110,7 +110,7 @@ vim.keymap.set("n", "<leader>ld", telescope.lsp_definitions, { noremap = true, s
 
 vim.keymap.set("n", "<leader>lq", telescope.quickfix, { noremap = true, silent = true, desc = "Quickfix list" })
 
-vim.keymap.set("n", "<leader>t", ":TodoTelescope<cr>", { noremap = true, silent = true, desc = "LSP code actions" })
+vim.keymap.set("n", "<leader>t", ":TodoTelescope<cr>", { noremap = true, silent = true, desc = "To Dos" })
 
 vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, { desc = 'Show diagnostic in a floating window' })
 
