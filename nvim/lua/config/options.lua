@@ -45,12 +45,10 @@ vim.cmd([[set guicursor+=i:ver25-iCursor]])
 -- Hide the cursor while typing
 vim.opt.mousehide = true
 
-
-
 vim.opt.incsearch = true  -- Incremental search, highlight matches as you type.
 vim.opt.hlsearch = true   -- Highlight matches.
 
-vim.opt.scrolloff = 0     -- Show X lines of context around the cursor.
+vim.opt.scrolloff = 10    -- Show X lines of context around the cursor.
 
 vim.opt.title = true      -- Set the terminal's title.
 
