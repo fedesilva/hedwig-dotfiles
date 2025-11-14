@@ -125,11 +125,14 @@ if command -v zoxide >/dev/null 2>&1; then
     alias cd='z'
 fi
 
+
 # Initialize SDKMAN if installed
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+#
 # The following lines have been added by Docker Desktop to enable Docker CLI completions.
-fpath=(/Users/fede.silva/.docker/completions $fpath)
+fpath=($HOME/.docker/completions $fpath)
 autoload -Uz compinit
 compinit
 # End of Docker CLI completions
-export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
+
+fpath=($HOME/.docker/completions $fpath)
