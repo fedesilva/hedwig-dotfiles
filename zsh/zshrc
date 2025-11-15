@@ -97,6 +97,7 @@ export PATH=~/.cargo/bin:$PATH
 
 # Source custom aliases if available
 [[ -f "$ZSH_CUSTOM/aliases.zsh" ]] && source "$ZSH_CUSTOM/aliases.zsh"
+[[ -f "$HOME/.dotfiles/zsh/aliases.zsh" ]] && source "$HOME/.dotfiles/zsh/aliases.zsh"
 
 # Initialize zoxide if installed
 if command -v zoxide >/dev/null 2>&1; then
@@ -136,3 +137,4 @@ compinit
 # End of Docker CLI completions
 
 fpath=($HOME/.docker/completions $fpath)
+export PATH="/usr/local/sbin:$PATH"

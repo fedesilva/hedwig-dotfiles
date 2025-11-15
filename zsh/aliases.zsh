@@ -39,8 +39,7 @@ alias gl="git lol"
 alias gla="git lola"
 alias grs="git remote show"
 
-alias gw="git whatchanged"
-alias gwp="git whatchanged -p"
-
+alias gw="git log --raw --no-merges"
+alias gwp="git log --raw --no-merges -p"
 
 
