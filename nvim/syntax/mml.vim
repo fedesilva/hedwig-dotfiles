@@ -15,8 +15,7 @@ syn case match
 " ============================================================================
 
 " Line comments: # comment (but not #- which starts doc comments)
-syn match mmlComment "#[^-].*$" contains=mmlTodo
-syn match mmlComment "#$" contains=mmlTodo
+syn match mmlComment "#\%(-\)\@!.*$" contains=mmlTodo
 
 " Documentation comments: #- ... -# (can be nested)
 syn region mmlDocComment start="#-" end="-#" contains=mmlDocComment,mmlTodo
@@ -68,7 +67,7 @@ syn match mmlOperator ","
 
 " Symbolic operators (but not single = or : which are handled above)
 " This matches sequences like +, -, *, ==, !=, <=, >=, |>, etc.
-syn match mmlOperator "[!#$%^&*+<>?/\\|~-]\+"
+syn match mmlOperator "[!$%^&*+<>?/\\|~-]\+"
 
 " Parentheses and brackets
 syn match mmlDelimiter "[(){}\[\]]"
