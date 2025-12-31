@@ -28,7 +28,7 @@ syn keyword mmlTodo contained TODO FIXME NOTE XXX
 " ============================================================================
 
 " Control flow keywords
-syn keyword mmlConditional if then else
+syn keyword mmlConditional if then elseif else
 
 " Declaration keywords
 syn keyword mmlKeyword module fn let op type end
