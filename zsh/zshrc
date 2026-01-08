@@ -137,4 +137,18 @@ compinit
 # End of Docker CLI completions
 
 fpath=($HOME/.docker/completions $fpath)
-export PATH="/usr/local/sbin:$PATH"
+export PATH="/usr/local/sbin:/Users/fede.silva/Library/Python/3.9/bin:$PATH"
+
+if [[ "$TERM_PROGRAM" == "ghostty" ]]; then
+    export TERM=xterm-256color
+fi
+
+
+# Prefer Homebrew Python 3.13 if it exists
+if command -v brew >/dev/null 2>&1; then
+  py313_prefix="$(brew --prefix python@3.13 2>/dev/null)"
+  if [ -n "$py313_prefix" ] && [ -x "$py313_prefix/bin/python3.13" ]; then
+    export PATH="$py313_prefix/bin:$PATH"
+  fi
+fi
+
