@@ -126,6 +126,9 @@ if command -v zoxide >/dev/null 2>&1; then
     alias cd='z'
 fi
 
+export ENABLE_LSP_TOOL=1
+
+
 
 # Initialize SDKMAN if installed
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
