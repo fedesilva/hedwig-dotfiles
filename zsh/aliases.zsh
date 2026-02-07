@@ -10,14 +10,6 @@ alias la="ls -lah"
 alias l="ls"
 
 
-#  Homebrew
-#
-
-alias br=brew
-alias brs="br search"
-alias bri="br info"
-alias brh="br home"
-
 #
 #  Make Neovim the default vim
 #
