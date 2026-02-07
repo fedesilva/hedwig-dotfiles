@@ -9,7 +9,6 @@ vim.api.nvim_set_keymap('n', 'k', 'gk', { noremap = true })
 -- Tree Mappings
 vim.api.nvim_set_keymap('n', '<leader>nn', ':Neotree toggle<CR>', { noremap = true })
 vim.api.nvim_set_keymap('n', '<leader>nb', ':Neotree buffers<CR>', { noremap = true })
-vim.api.nvim_set_keymap('n', '<leader>m', ':Neotree close<CR>', { noremap = true })
 
 
 -- Turns off search highlighting

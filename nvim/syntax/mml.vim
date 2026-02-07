@@ -31,7 +31,7 @@ syn keyword mmlTodo contained TODO FIXME NOTE XXX
 syn keyword mmlConditional if then elif else
 
 " Declaration keywords
-syn keyword mmlKeyword module fn let op type end
+syn keyword mmlKeyword module fn let op type end inline
 
 " Visibility keywords
 syn keyword mmlKeyword pub protected lexical
