@@ -5,4 +5,3 @@ return {
     require("Comment").setup()
   end,
 }
-
