@@ -168,6 +168,8 @@ if command -v brew >/dev/null 2>&1; then
   fi
 fi
 
-export PATH=\"$HOME/.cargo/bin:$PATH\"
+export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="$HOME/.rustup/toolchains/stable-x86_64-apple-darwin/bin:$PATH"
 
+# Zipline env (added by build_tools/setup-environment)
+source /Users/fede.silva/.config/zipline/env
