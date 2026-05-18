@@ -17,7 +17,6 @@ return {
         "rust_analyzer", -- Rust LSP
         "gopls",         -- Go LSP
         "marksman",
-        "bzl",
         "zls",
       },
       automatic_installation = true, -- Automatically install missing LSPs

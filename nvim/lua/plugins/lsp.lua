@@ -56,9 +56,6 @@ return {
     -- Go
     vim.lsp.config("gopls", {})
 
-    -- Bazel/Starlark
-    vim.lsp.config("bzl", {})
-
     -- Zig
     vim.lsp.config("zls", {})
 
@@ -69,7 +66,6 @@ return {
     vim.lsp.enable("ruff")
     vim.lsp.enable("rust_analyzer")
     vim.lsp.enable("gopls")
-    vim.lsp.enable("bzl")
     vim.lsp.enable("zls")
   end,
 }
