@@ -6,6 +6,9 @@ SDKMAN_CANDIDATES=(
   sbt
 )
 
+COURSIER_BIN_DIR="$HOME/bin"
+COURSIER_BIN_NAME="cs"
+
 BREW_FORMULAE=(
   bash
   fzf
@@ -23,6 +26,7 @@ BREW_FORMULAE=(
   tmux
   tree
   tree-sitter-cli
+  util-linux
   watch
   zoxide
   zsh-completions

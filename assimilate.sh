@@ -167,6 +167,61 @@ sdk_install_if_missing() {
   sdk default "$candidate" "$version"
 }
 
+install_coursier() {
+  local target="${COURSIER_BIN_DIR}/${COURSIER_BIN_NAME}"
+
+  if [[ -x "$target" ]]; then
+    echo "Coursier already installed at $target"
+    return 0
+  fi
+
+  if ! command -v curl >/dev/null 2>&1; then
+    echo "curl is not available; cannot install Coursier" >&2
+    exit 1
+  fi
+
+  if ! command -v gzip >/dev/null 2>&1; then
+    echo "gzip is not available; cannot install Coursier" >&2
+    exit 1
+  fi
+
+  local os
+  local arch
+  local url
+  os="$(uname -s)"
+  arch="$(uname -m)"
+
+  case "${os}:${arch}" in
+    Darwin:arm64)
+      url="https://github.com/coursier/coursier/releases/latest/download/cs-aarch64-apple-darwin.gz"
+      ;;
+    Darwin:x86_64)
+      url="https://github.com/coursier/launchers/raw/master/cs-x86_64-apple-darwin.gz"
+      ;;
+    Linux:aarch64|Linux:arm64)
+      url="https://github.com/coursier/launchers/raw/master/cs-aarch64-pc-linux.gz"
+      ;;
+    Linux:x86_64)
+      url="https://github.com/coursier/launchers/raw/master/cs-x86_64-pc-linux.gz"
+      ;;
+    *)
+      echo "Unsupported Coursier platform: ${os} ${arch}" >&2
+      exit 1
+      ;;
+  esac
+
+  mkdir -p "$COURSIER_BIN_DIR"
+  curl -fL "$url" | gzip -d > "${target}.tmp"
+  chmod +x "${target}.tmp"
+
+  if is_macos && command -v xattr >/dev/null 2>&1; then
+    xattr -d com.apple.quarantine "${target}.tmp" 2>/dev/null || true
+  fi
+
+  mv "${target}.tmp" "$target"
+  echo "Installed Coursier at $target"
+}
+
 brew_install_tools() {
   if ! is_macos; then
     return 0
@@ -194,6 +249,7 @@ bootstrap_tools() {
     sdk install "$candidate"
   done
 
+  install_coursier
   brew_install_tools
 }
 
