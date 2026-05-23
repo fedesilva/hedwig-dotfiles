@@ -5,6 +5,10 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
+if [[ "$TERM_PROGRAM" == "ghostty" ]]; then
+    export TERM=xterm-256color
+fi
+
 
 # ----------------------------------------------------
 # direnv (only if it is available)
@@ -13,8 +17,6 @@ fi
 if command -v direnv >/dev/null 2>&1; then
   emulate zsh -c "$(direnv export zsh)" 2>/dev/null
 fi
-
-
 
 typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
 typeset -g POWERLEVEL9K_INSTANT_PROMPT=off
@@ -31,7 +33,7 @@ typeset -g POWERLEVEL9K_INSTANT_PROMPT=off
 # Unified .zshrc for macOS and Docker
 # ====================================================
 
-# Check if we're in the Docker environment
+# Check if we're in the Dockershell environment
 if [[ "$(uname -a)" == *"dockershell"* ]]; then
   # Source Docker-specific configuration
   echo "Dockershell detected, sourcing .zsh_docker"
@@ -42,6 +44,7 @@ fi
 # -------------------------------
 # Mac-specific configuration below
 # -------------------------------
+
 # Homebrew Config based on Mac architecture
 if [[ "$(uname -s)" == "Darwin" ]]; then
 	if [[ "$(uname -m)" == "arm64" ]]; then
@@ -51,24 +54,31 @@ if [[ "$(uname -s)" == "Darwin" ]]; then
 	fi
 
 	# Set up PATH
-	export PATH="$HOME/bin:$HOME/.local/bin:$HOMEBREW_PREFIX/opt/llvm/bin:$HOMEBREW_PREFIX/bin:$PATH"
+	export PATH="$HOME/.local/bin:$HOMEBREW_PREFIX/opt/llvm/bin:$HOMEBREW_PREFIX/bin:$PATH"
 	export PATH="$HOME/.npm-global/bin:$PATH"
-	export PATH="$HOME/Library/Application Support/Coursier/bin:$PATH"
+	[[ -d "$HOME/Library/Application Support/Coursier/bin" ]] && path=("$HOME/Library/Application Support/Coursier/bin" $path)
 	export PATH="$(brew --prefix)/opt/util-linux/sbin:${PATH}"
 	export PATH="$(brew --prefix)/opt/util-linux/bin:${PATH}"
 	
 	# Add Homebrew Zsh completions to fpath
 	fpath=("$HOMEBREW_PREFIX/share/zsh/site-functions" $fpath)
+  
+  # Prefer Homebrew Python 3.13 if it exists
+  if command -v brew >/dev/null 2>&1; then
+    py313_prefix="$(brew --prefix python@3.13 2>/dev/null)"
+    if [ -n "$py313_prefix" ] && [ -x "$py313_prefix/bin/python3.13" ]; then
+      export PATH="$py313_prefix/bin:$PATH"
+    fi
+  fi
+
 fi
 
 
-
-
-
-# -------------------------------
-# Initialize Zsh Completion System
-# -------------------------------
-autoload -Uz compinit && compinit -u
+#-----------------------------------
+# Bin paths
+#-----------------------------------
+[[ -d "$HOME/bin" ]] && export PATH="$HOME/bin:$PATH"
+[[ -d "$HOME/.cargo/bin" ]] && export PATH="$HOME/.cargo/bin:$PATH"
 
 # -------------------------------
 # oh-my-zsh Setup
@@ -79,6 +89,9 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 #ZSH_THEME="robbyrussell"
 plugins=(git fzf tmux 1password git-prompt docker)
 source "$ZSH/oh-my-zsh.sh"
+#
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # -------------------------------------------
 # Zsh Completions (fixes compinit issue - IMPROVED)
@@ -92,10 +105,6 @@ if [[ "$(uname -s)" == "Darwin" ]]; then
 	fi
 fi
 
-# Safely reload completion without permission issues
-autoload -Uz compinit
-compinit -u
-
 # -------------------------------------------
 # User-specific configuration
 # -------------------------------------------
@@ -106,7 +115,6 @@ else
     export EDITOR='nvim'
 fi
 
-export PATH=~/.cargo/bin:$PATH
 
 # Source custom aliases if available
 [[ -f "$ZSH_CUSTOM/aliases.zsh" ]] && source "$ZSH_CUSTOM/aliases.zsh"
@@ -116,10 +124,12 @@ export PATH=~/.cargo/bin:$PATH
 if command -v zoxide >/dev/null 2>&1; then
     eval "$(zoxide init zsh)"
 fi
+#
+# Use zoxide's `z` in place of cd if available
+if command -v zoxide >/dev/null 2>&1; then
+    alias cd='z'
+fi
 
-
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # Source sensitive keys if available
 [[ -f "$HOME/.config/keys" ]] && source "$HOME/.config/keys"
@@ -128,48 +138,34 @@ fi
 [[ -f "$HOME/.config/aliases" ]] && source "$HOME/.config/aliases"
 
 # Source local-specific stuff
+# This is expected to be a list of file paths to be sources
 if [[ -f "$HOME/.config/source.list" ]]; then
     while read -r file; do
         source "$file"
     done < "$HOME/.config/source.list"
 fi
 
-# Use zoxide's `z` in place of cd if available
-if command -v zoxide >/dev/null 2>&1; then
-    alias cd='z'
-fi
+
 
 export ENABLE_LSP_TOOL=1
-
-
 
 # Initialize SDKMAN if installed
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 #
+#
 # The following lines have been added by Docker Desktop to enable Docker CLI completions.
 fpath=($HOME/.docker/completions $fpath)
-autoload -Uz compinit
-compinit
 # End of Docker CLI completions
 
-fpath=($HOME/.docker/completions $fpath)
-export PATH="/usr/local/sbin:/Users/fede.silva/Library/Python/3.9/bin:$PATH"
 
-if [[ "$TERM_PROGRAM" == "ghostty" ]]; then
-    export TERM=xterm-256color
+
+
+#------------------------------------------------------------
+# Source local-specific stuff
+#
+# If installers pollute this file with stanzas at the end
+# move them to the file $HOME/.config/env
+#------------------------------------------------------------
+if [[ -f "$HOME/.config/env" ]]; then
+  source "$HOME/.config/env"
 fi
-
-
-# Prefer Homebrew Python 3.13 if it exists
-if command -v brew >/dev/null 2>&1; then
-  py313_prefix="$(brew --prefix python@3.13 2>/dev/null)"
-  if [ -n "$py313_prefix" ] && [ -x "$py313_prefix/bin/python3.13" ]; then
-    export PATH="$py313_prefix/bin:$PATH"
-  fi
-fi
-
-export PATH="$HOME/.cargo/bin:$PATH"
-export PATH="$HOME/.rustup/toolchains/stable-x86_64-apple-darwin/bin:$PATH"
-
-# Zipline env (added by build_tools/setup-environment)
-source /Users/fede.silva/.config/zipline/env
