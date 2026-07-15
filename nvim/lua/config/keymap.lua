@@ -17,16 +17,6 @@ vim.api.nvim_set_keymap('n', '<Leader>/', ':nohlsearch<CR>', { noremap = true })
 -- Toggle wrapping
 vim.api.nvim_set_keymap('n', '<Leader>w', ':set wrap! wrap?<CR>', { noremap = true })
 
--- Copilot
--- accept GitHub Copilot suggestion
-vim.api.nvim_set_keymap("i", "<C-j>", 'copilot#Accept("<C-K>")', { silent = true, expr = true })
--- accept next workd from Copilot Suggestion
-vim.api.nvim_set_keymap("i", "<C-k>", 'copilot#AcceptWord()', { silent = true, expr = true })
--- accept line from Copilot Suggestion
-vim.api.nvim_set_keymap("i", "<C-l>", 'copilot#AcceptLine()', { silent = true, expr = true })
-
-vim.g.copilot_no_tab_map = true -- Prevent Copilot from hijacking <Tab>
-
 -- Lazy
 vim.api.nvim_set_keymap("n", "<leader>L", ":Lazy<CR>", { noremap = true, silent = true })
 
