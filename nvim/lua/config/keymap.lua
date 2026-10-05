@@ -141,14 +141,14 @@ vim.keymap.set("i", "<D-s>", "<C-O>:w<CR>", { noremap = true, silent = true, des
 --
 -- Fugitive mappings (Git)
 --
-vim.keymap.set("n", "<leader>gs", ":Git<CR>", { noremap = true, silent = true, desc = "Open Git status" })
-vim.keymap.set("n", "<leader>gc", ":Git commit<CR>", { noremap = true, silent = true, desc = "Git commit" })
-vim.keymap.set("n", "<leader>gp", ":Git push<CR>", { noremap = true, silent = true, desc = "Git push" })
-vim.keymap.set("n", "<leader>gl", ":Glog<CR>", { noremap = true, silent = true, desc = "View Git log" })
-vim.keymap.set("n", "<leader>gb", ":Gblame<CR>", { noremap = true, silent = true, desc = "Git blame" })
-vim.keymap.set("n", "<leader>gd", ":Gdiffsplit<CR>", { noremap = true, silent = true, desc = "Git diff" })
-vim.keymap.set("n", "<leader>gr", ":Gread<CR>", { noremap = true, silent = true, desc = "Reset file to last commit" })
-vim.keymap.set("n", "<leader>gw", ":Gwrite<CR>", { noremap = true, silent = true, desc = "Stage current file" })
+-- vim.keymap.set("n", "<leader>gs", ":Git<CR>", { noremap = true, silent = true, desc = "Open Git status" })
+-- vim.keymap.set("n", "<leader>gc", ":Git commit<CR>", { noremap = true, silent = true, desc = "Git commit" })
+-- vim.keymap.set("n", "<leader>gp", ":Git push<CR>", { noremap = true, silent = true, desc = "Git push" })
+-- vim.keymap.set("n", "<leader>gl", ":Glog<CR>", { noremap = true, silent = true, desc = "View Git log" })
+-- vim.keymap.set("n", "<leader>gb", ":Gblame<CR>", { noremap = true, silent = true, desc = "Git blame" })
+-- vim.keymap.set("n", "<leader>gd", ":Gdiffsplit<CR>", { noremap = true, silent = true, desc = "Git diff" })
+-- vim.keymap.set("n", "<leader>gr", ":Gread<CR>", { noremap = true, silent = true, desc = "Reset file to last commit" })
+-- vim.keymap.set("n", "<leader>gw", ":Gwrite<CR>", { noremap = true, silent = true, desc = "Stage current file" })
 
 
 -- Gitlink
