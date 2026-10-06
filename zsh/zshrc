@@ -173,5 +173,5 @@ if [[ -f "$HOME/.config/env" ]]; then
 fi
 
 if [[ -d "/opt/homebrew/lib" ]]; then
-  export LIBRARY_PATH=/opt/homebrew/lib
+  export LIBRARY_PATH=$LIBRARY_PATH:/opt/homebrew/lib
 fi
