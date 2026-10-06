@@ -8,6 +8,7 @@ return {
     require("mason").setup() -- Mason setup
 
     require("mason-lspconfig").setup({
+      automatic_enable = { exclude = { "copilot" } },
       ensure_installed = {
         "pyright",       -- Python type checker + LSP features
         "ruff",          -- Anotheer Python LSP
