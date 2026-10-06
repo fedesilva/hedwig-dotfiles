@@ -171,3 +171,7 @@ fpath=($HOME/.docker/completions $fpath)
 if [[ -f "$HOME/.config/env" ]]; then
   source "$HOME/.config/env"
 fi
+
+if [[ -d "/opt/homebrew/lib" ]]; then
+  export LIBRARY_PATH=/opt/homebrew/lib
+fi
