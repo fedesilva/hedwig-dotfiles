@@ -2,3 +2,5 @@ tags
 **/.metals
 **/.DS_Store
 .claude
+*.so
+*.fede.*
