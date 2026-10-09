@@ -16,71 +16,9 @@ if [[ "$TERM_PROGRAM" == "ghostty" ]]; then
 fi
 
 
-# ----------------------------------------------------
-# direnv (only if it is available)
-# ----------------------------------------------------
-
-if command -v direnv >/dev/null 2>&1; then
-  emulate zsh -c "$(direnv export zsh)" 2>/dev/null
-fi
-
 typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
 typeset -g POWERLEVEL9K_INSTANT_PROMPT=off
 
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block; everything else may go below.
-# if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-#  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-# fi
-
-
-# Check if we're in the Dockershell environment
-if [[ "$(uname -a)" == *"dockershell"* ]]; then
-  # Source Docker-specific configuration
-  echo "Dockershell detected, sourcing .zsh_docker"
-  [[ -f "$HOME/.zshrc_docker" ]] && source "$HOME/.zshrc_docker"
-  return 0  # Exit early to prevent loading the rest of this file
-fi
-
-# -------------------------------
-# Mac-specific configuration below
-# -------------------------------
-
-# Homebrew Config based on Mac architecture
-if [[ "$(uname -s)" == "Darwin" ]]; then
-	if [[ "$(uname -m)" == "arm64" ]]; then
-	  export HOMEBREW_PREFIX="/opt/homebrew"
-	else
-	  export HOMEBREW_PREFIX="/usr/local"
-	fi
-
-	# Set up PATH
-	export PATH="$HOME/.local/bin:$HOMEBREW_PREFIX/opt/llvm/bin:$HOMEBREW_PREFIX/bin:$PATH"
-	export PATH="$HOME/.npm-global/bin:$PATH"
-	[[ -d "$HOME/Library/Application Support/Coursier/bin" ]] && path=("$HOME/Library/Application Support/Coursier/bin" $path)
-	export PATH="$(brew --prefix)/opt/util-linux/sbin:${PATH}"
-	export PATH="$(brew --prefix)/opt/util-linux/bin:${PATH}"
-	
-	# Add Homebrew Zsh completions to fpath
-	fpath=("$HOMEBREW_PREFIX/share/zsh/site-functions" $fpath)
-  
-  # Prefer Homebrew Python 3.13 if it exists
-  if command -v brew >/dev/null 2>&1; then
-    py313_prefix="$(brew --prefix python@3.13 2>/dev/null)"
-    if [ -n "$py313_prefix" ] && [ -x "$py313_prefix/bin/python3.13" ]; then
-      export PATH="$py313_prefix/bin:$PATH"
-    fi
-  fi
-
-fi
-
-
-#-----------------------------------
-# Bin paths
-#-----------------------------------
-[[ -d "$HOME/bin" ]] && export PATH="$HOME/bin:$PATH"
-[[ -d "$HOME/.cargo/bin" ]] && export PATH="$HOME/.cargo/bin:$PATH"
 
 # -------------------------------
 # oh-my-zsh Setup
@@ -106,6 +44,49 @@ if [[ "$(uname -s)" == "Darwin" ]]; then
 	    export FPATH="/opt/homebrew/share/zsh/site-functions:$FPATH"
 	fi
 fi
+
+
+
+# -------------------------------
+# Mac-specific configuration below
+# -------------------------------
+
+# Homebrew Config based on Mac architecture
+if [[ "$(uname -s)" == "Darwin" ]]; then
+	if [[ "$(uname -m)" == "arm64" ]]; then
+	  export HOMEBREW_PREFIX="/opt/homebrew"
+	else
+	  export HOMEBREW_PREFIX="/usr/local"
+	fi
+
+	# Set up PATH
+	
+	# Add Homebrew Zsh completions to fpath
+	fpath=("$HOMEBREW_PREFIX/share/zsh/site-functions" $fpath)
+export PATH="/usr/local/sbin:$PATH"
+  
+  # Prefer Homebrew Python 3.13 if it exists
+  if command -v brew >/dev/null 2>&1; then
+    py313_prefix="$(brew --prefix python@3.13 2>/dev/null)"
+    if [ -n "$py313_prefix" ] && [ -x "$py313_prefix/bin/python3.13" ]; then
+      export PATH="$py313_prefix/bin:$PATH"
+    fi
+  fi
+
+fi
+
+
+#-----------------------------------
+# Bin paths
+#-----------------------------------
+export PATH="$HOME/.local/bin:$HOMEBREW_PREFIX/opt/llvm/bin:$HOMEBREW_PREFIX/bin:$PATH"
+export PATH="$HOME/.npm-global/bin:$PATH"
+[[ -d "$HOME/Library/Application Support/Coursier/bin" ]] && path=("$HOME/Library/Application Support/Coursier/bin" $path)
+export PATH="$(brew --prefix)/opt/util-linux/sbin:${PATH}"
+export PATH="$(brew --prefix)/opt/util-linux/bin:${PATH}"
+[[ -d "$HOME/bin" ]] && export PATH="$HOME/bin:$PATH"
+export PATH="$HOME/.rustup/toolchains/stable-x86_64-apple-darwin/bin:$PATH"
+[[ -d "$HOME/.cargo/bin" ]] && export PATH="$HOME/.cargo/bin:$PATH"
 
 # -------------------------------------------
 # User-specific configuration
@@ -140,7 +121,7 @@ fi
 [[ -f "$HOME/.config/aliases" ]] && source "$HOME/.config/aliases"
 
 # Source local-specific stuff
-# This is expected to be a list of file paths to be sources
+# This is expected to be a list of file paths to be sourced
 if [[ -f "$HOME/.config/source.list" ]]; then
     while read -r file; do
         source "$file"
@@ -148,19 +129,15 @@ if [[ -f "$HOME/.config/source.list" ]]; then
 fi
 
 
+if [[ -d "/opt/homebrew/lib" ]]; then
+  export LIBRARY_PATH=$LIBRARY_PATH:/opt/homebrew/lib
+fi
 
 export ENABLE_LSP_TOOL=1
 
 # Initialize SDKMAN if installed
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 #
-#
-# The following lines have been added by Docker Desktop to enable Docker CLI completions.
-fpath=($HOME/.docker/completions $fpath)
-# End of Docker CLI completions
-
-
-
 
 #------------------------------------------------------------
 # Source local-specific stuff
@@ -172,6 +149,4 @@ if [[ -f "$HOME/.config/env" ]]; then
   source "$HOME/.config/env"
 fi
 
-if [[ -d "/opt/homebrew/lib" ]]; then
-  export LIBRARY_PATH=$LIBRARY_PATH:/opt/homebrew/lib
-fi
+
